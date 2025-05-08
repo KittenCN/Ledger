@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Gate.io</title>
+    <link rel="stylesheet" href="wealth.css">
+    <link rel="stylesheet" href="myfunds.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <div class="top-nav">
+        <a href="/" class="logo">
+            <img src="path_to_logo.png" alt="Gate.io"> <!-- 替换为你的logo图片路径 -->
+        </a>
+        <div class="menu-items">
+            <a href="#">买币</a>
+            <a href="#">行情</a>
+            <a href="#">交易</a>
+            <a href="#">衍生品</a>
+            <a href="#">芝麻金融</a>
+            <a href="#">交易机器人</a>
+            <a href="#">跟单</a>
+            <a href="#">机构</a>
+            <a href="#">币圈</a>
+            <a href="#">打新</a>
+            <a href="#">福利中心</a>
+        </div>
+        <div class="icon-buttons">
+            <a href="#">资产</a>
+            <a href="#">订单</a>
+            <a href="#"><i class="fa fa-bell"></i></a>
+            <a href="#"><i class="fa fa-user-circle"></i></a>
+            <a href="#"><i class="fa fa-cog"></i></a>
+        </div>
+    </div>
+    <div class="wealth-management">
+        <div class="filters">
+            <div class="filter-group">
+                <label for="status">状态:</label>
+                <select id="status">
+                    <option selected>全部</option>
+                    <option>活跃</option>
+                    <option>已结束</option>
+                </select>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="搜索">
+                <button>搜索</button>
+            </div>
+        </div>
+        <div class="investment-actions">
+            <button>定期理财</button>
+            <button>活币理财</button>
+            <button>插槽理财</button>
+        </div>
+        <div class="investment-details">
+            <table>
+                <thead>
+                    <tr>
+                        <th>操作/编号</th>
+                        <th>产品名称</th>
+                        <th>锁定期限 (天)</th>
+                        <th>参考年化</th>
+                        <th>投资金额</th>
+                        <th>预计利息</th>
+                        <th>投资日期</th>
+                        <th>到期日期</th>
+                        <th>状态</th>
+                        <th>仓位状态</th>
+                        <th>自动续投</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>520973</td>
+                        <td>USDT定期投资</td>
+                        <td>730</td>
+                        <td>8.00%</td>
+                        <td>1,000,000.00 USDT</td>
+                        <td>166,400.00 USDT</td>
+                        <td>2022-09-30</td>
+                        <td>2024-10-01</td>
+                        <td>进行中</td>
+                        <td class="locked">锁仓中</td>
+                        <td>关闭</td>
+                    </tr>
+                    <!-- 更多数据行 -->
+                </tbody>
+            </table>
+        </div>        
+        <div class="pagination">
+            <button>上一页</button>
+            <span>1</span>
+            <button>下一页</button>
+        </div>
+    </div>
+    <div class="transaction-history">
+        <h3>交易记录</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>时间</th>
+                    <th>账户类型</th>
+                    <th>操作类型</th>
+                    <th>操作金额</th>
+                    <th>账户总额</th>
+                    <th>动作详情</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2022-09-30 22:05:50</td>
+                    <td>交易账户</td>
+                    <td>锁仓</td>
+                    <td>-1,000,000.00 USDT</td>
+                    <td>0.000000 USDT</td>
+                    <td>可用:0.000000 USDT</td>
+                </tr>
+                <!-- 更多数据行 -->
+            </tbody>
+        </table>
+        <div class="pagination">
+            <button>上一页</button>
+            <span>1</span>
+            <button>下一页</button>
+        </div>
+    </div>
+    
+<script>
+
+</script>
+</body>
+</html>

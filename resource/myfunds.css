@@ -1,0 +1,255 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.container {
+    display: flex;
+    width: 100%; /* 确保容器使用全宽 */
+}
+.sidebar {
+    flex: 0 0 10%; /* 固定占总宽度的20% */
+    background-color: #f8f8f8;
+    height: 100vh; /* 全视窗高度 */
+    border-right: 1px solid #ccc;
+    overflow-y: auto; /* 如果内容很多，允许滚动 */
+}
+.sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.sidebar li {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    color: #333;
+}
+.sidebar li i {
+    margin-right: 10px; /* 图标和文字之间的距离 */
+}
+.main-content {
+    flex: 0 0 70%; /* 固定占总宽度的50% */
+    padding: 20px;
+    overflow-y: auto; /* 如果内容很多，允许滚动 */
+}
+.header div {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.balance {
+    margin-bottom: 20px;
+}
+.balance div {
+    margin-bottom: 5px;
+}
+.balance button {
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.accounts {
+    background-color: #f8f8f8;
+    padding: 15px;
+}
+.accounts div {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.asset-management {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.actions button {
+    padding: 6px 12px;
+    margin-left: 8px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.balances {
+    display: flex;
+    justify-content: space-between;
+}
+
+.balance {
+    background-color: #f8f8f8;
+    padding: 15px;
+    width: 48%; /* 使两个板块平均分配宽度 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-right: 10px;
+}
+
+.balance:last-child {
+    margin-right: 0;
+}
+
+.title {
+    font-size: 14px;
+    color: #666;
+}
+
+.amount {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.conversion {
+    font-size: 12px;
+    color: #999;
+}
+
+.action-button {
+    padding: 8px 16px;
+    background-color: lightblue;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.change.decrease {
+    color: red;
+}
+.my-assets {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+.asset-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s; /* 平滑背景颜色变化 */
+}
+
+.asset-item:last-child {
+    border-bottom: none;
+}
+
+.asset-item:hover {
+    background-color: #007bff; /* 鼠标悬停时的蓝色背景 */
+    color: white; /* 鼠标悬停时文字颜色变白 */
+}
+
+.asset-item span, .asset-item div button {
+    color: inherit; /* 保证文字颜色与父元素相同 */
+}
+
+.asset-item span i {
+    margin-right: 10px;
+}
+
+.asset-item div {
+    display: flex;
+}
+
+button {
+    padding: 6px 12px;
+    margin-left: 8px;
+    background-color: inherit; /* 按钮背景色继承 */
+    color: inherit; /* 按钮文字颜色继承 */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.right-panel {
+    background-color: #fff;
+    padding: 20px;
+    width: 30%; /* 根据布局调整 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+}
+
+.user-profile h3, .news-section h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.profile-details {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.profile-img {
+    width: 50px; /* 调整为合适的尺寸 */
+    height: 50px;
+    border-radius: 50%; /* 圆形图片 */
+    margin-right: 10px;
+}
+
+.details p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.upgrade-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.news-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.news-section li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.news-section li:last-child {
+    border-bottom: none;
+}
+.top-nav {
+    background-color: #000; /* 背景颜色 */
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.top-nav .logo img {
+    height: 40px; /* 根据需要调整logo的尺寸 */
+}
+
+.top-nav .menu-items a, .top-nav .icon-buttons a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+.top-nav .icon-buttons a {
+    font-size: 20px;
+}

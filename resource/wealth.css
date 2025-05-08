@@ -1,0 +1,151 @@
+.investment-details {
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.investment-details table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.investment-details th, .investment-details td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+thead {
+    background-color: #f7f7f7;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f0f0f0;
+}
+
+tbody tr:hover {
+    background-color: #e1e1e1;
+}
+.wealth-management {
+    background-color: #fff;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.filter-group label {
+    margin-right: 10px;
+}
+
+.filter-group select, .search-box input {
+    padding: 8px;
+    margin-right: 10px;
+}
+
+.search-box button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.investment-actions {
+    margin-bottom: 20px;
+}
+
+.investment-actions button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+thead {
+    background-color: #f7f7f7;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f0f0f0;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.locked {
+    color: red; /* 锁仓中显示为红色 */
+}
+
+.transaction-history {
+    margin: 20px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.transaction-history table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.transaction-history th, .transaction-history td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.transaction-history thead {
+    background-color: #f7f7f7;
+}
+
+.transaction-history tbody tr:nth-child(odd) {
+    background-color: #f0f0f0;
+}
+
+.transaction-history .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transaction-history .pagination button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}

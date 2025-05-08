@@ -1,0 +1,51 @@
+.spot-market {
+    flex: 0 0 80%; /* 固定占总宽度的20% */
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.balances {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.balance {
+    text-align: center;
+}
+
+.balance .amount {
+    font-weight: bold;
+}
+
+.coin-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.coin-list th, .coin-list td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.coin-list thead {
+    background-color: #f7f7f7;
+}
+
+.coin-list tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
