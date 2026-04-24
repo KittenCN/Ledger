@@ -1,4 +1,4 @@
-
+﻿
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -411,7 +411,176 @@
     }
     .card { background-color: #222; padding: 20px; margin-bottom: 20px; flex-basis: 30%; }
     button { background-color: #0066ff; color: white; border: none; padding: 10px 20px; cursor: pointer; }
-</style>
+    .buy-sell-panel {
+        color: #fff;
+        margin-top: 24px;
+    }
+    .buy-sell-header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 18px;
+    }
+    .buy-sell-header h2 {
+        margin: 0 0 6px;
+        font-size: 26px;
+    }
+    .buy-sell-header p {
+        margin: 0;
+        color: #b9c0cc;
+    }
+    .buy-sell-status {
+        background: #3b2f17;
+        color: #f6c65b;
+        border: 1px solid #705a24;
+        border-radius: 4px;
+        padding: 9px 12px;
+        white-space: nowrap;
+    }
+    .buy-sell-layout {
+        display: grid;
+        grid-template-columns: minmax(360px, 1.15fr) minmax(300px, 0.85fr);
+        gap: 18px;
+    }
+    .buy-sell-card {
+        background: #2f2f2f;
+        border: 1px solid #464646;
+        border-radius: 6px;
+        padding: 20px;
+        box-shadow: 0 8px 22px rgba(0,0,0,0.22);
+    }
+    .buy-sell-toolbar {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        margin-bottom: 18px;
+        background: #242424;
+        border-radius: 6px;
+        padding: 4px;
+    }
+    .buy-sell-mode {
+        background: transparent;
+        border-radius: 4px;
+        color: #c7ceda;
+        height: 40px;
+    }
+    .buy-sell-mode.active {
+        background: #0066ff;
+        color: #fff;
+    }
+    .buy-sell-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-bottom: 16px;
+    }
+    .buy-sell-field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .buy-sell-field.full {
+        grid-column: 1 / -1;
+    }
+    .buy-sell-field label {
+        color: #b9c0cc;
+        font-size: 13px;
+    }
+    .buy-sell-field input,
+    .buy-sell-field select {
+        background: #1f1f1f;
+        color: #fff;
+        border: 1px solid #555;
+        border-radius: 4px;
+        height: 42px;
+        padding: 0 12px;
+    }
+    .buy-sell-field input:focus,
+    .buy-sell-field select:focus {
+        outline: none;
+        border-color: #0066ff;
+    }
+    .buy-sell-rate-row,
+    .buy-sell-summary-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 10px 0;
+        border-bottom: 1px solid #444;
+        color: #d7dce5;
+    }
+    .buy-sell-rate-row:last-child,
+    .buy-sell-summary-row:last-child {
+        border-bottom: none;
+    }
+    .buy-sell-muted {
+        color: #9fa8b6;
+    }
+    .buy-sell-provider {
+        display: grid;
+        gap: 10px;
+        margin-top: 16px;
+    }
+    .buy-sell-provider-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #242424;
+        border: 1px solid #444;
+        border-radius: 5px;
+        padding: 12px;
+    }
+    .buy-sell-provider-name {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .provider-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #28a745;
+        display: inline-block;
+    }
+    .buy-sell-pill {
+        background: #1f3d2b;
+        color: #75d68b;
+        border-radius: 999px;
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+    .buy-sell-warning {
+        background: #3a2222;
+        color: #ffb3b3;
+        border: 1px solid #694141;
+        border-radius: 5px;
+        padding: 12px;
+        margin: 16px 0;
+    }
+    .buy-sell-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    .buy-sell-submit {
+        height: 42px;
+        border-radius: 4px;
+    }
+    .buy-sell-submit.secondary {
+        background: #444;
+    }
+    @media (max-width: 900px) {
+        .buy-sell-layout,
+        .buy-sell-grid,
+        .buy-sell-actions {
+            grid-template-columns: 1fr;
+        }
+        .buy-sell-header {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+    }</style>
 </head>
 <body>
     <div class="demo-overlay"></div>
@@ -434,7 +603,7 @@
             <button class="menu-button exclude" onclick="activateSend(this)"><span class="fas fa-arrow-up"></span>&nbsp;&nbsp;Send</button>
             <button class="menu-button exclude" onclick="activateReceive(this)"><span class="fas fa-arrow-down"></span>&nbsp;&nbsp;Receive</button>
             <button class="menu-button" onclick="activateButton(this)"><span class="fas fa-chart-line"></span>&nbsp;&nbsp;Earn<span class="new-tag">New</span></span></button>
-            <button class="menu-button" onclick="activateButton(this)"><span class="fas fa-donate"></span>&nbsp;&nbsp;Buy / Sell</button>
+            <button class="menu-button exclude buy-sell-entry" onclick="activateBuySell(this)"><span class="fas fa-donate"></span>&nbsp;&nbsp;Buy / Sell</button>
             <button class="menu-button" onclick="activateButton(this)"><span class="fas fa-retweet"></span>&nbsp;&nbsp;Swap<span class="new-tag">Popular</span></button>
             <button class="menu-button" onclick="activateButton(this)"><span class="fas fa-money-check-alt"></span>&nbsp;&nbsp;Refer a friend<span class="new-tag">$10</span></button>
             <button class="menu-button" onclick="activateButton(this)"><span class="far fa-credit-card"></span>&nbsp;&nbsp;Card</button>
@@ -471,7 +640,7 @@
                 </table>
             </div>
             <div class="cards-container">
-                <button class="card-button" onclick="activateButton(this)">
+                <button class="card-button buy-sell-entry" onclick="activateBuySell(this)">
                     <h3><span class="fas fa-donate fa-2x"></span>&nbsp;&nbsp;Buy / Sell</h3>
                     <p>Buy and sell with trusted providers</p>
                 </button>
@@ -748,9 +917,9 @@
     document.addEventListener('DOMContentLoaded', function() {
         const main = document.querySelector('.main');
         main.addEventListener('click', function(event) {
-            if (event.target.classList.contains('card-button')) {
-
-                handleMenuButtonClick(event.target);
+            const cardButton = event.target.closest('.card-button');
+            if (cardButton && !cardButton.classList.contains('buy-sell-entry')) {
+                handleMenuButtonClick(cardButton);
             }
         });
     });
@@ -763,7 +932,7 @@
         });
     });
     document.addEventListener('DOMContentLoaded', function() {
-        var buttons = document.querySelectorAll('.menu-button:not(.exclude), .add-account-button, .btn');
+        var buttons = document.querySelectorAll('.menu-button:not(.exclude), .add-account-button, .btn:not(.buy-sell-submit)');
         buttons.forEach(function(button) {
             button.addEventListener('click', function() {
                 var loadingIcon = document.createElement('div');
@@ -807,11 +976,189 @@
             loadingIcon.style.display = 'none';
             alert('Unknown network failure. If this recurs, please try again in 30 minutes.');
         }, 5000);
-    }    function activateButton(element) {
+    }
+
+    function activateButton(element) {
         const buttons = document.querySelectorAll('.menu-button, .card-button, .icons-button');
         buttons.forEach(button => button.classList.remove('active'));
         element.classList.add('active');
     }
+
+    function showBuySellUnavailableError() {
+        alert('Buy and sell services are not supported in your current region.');
+    }
+
+    function formatCurrency(value, currency = 'USD') {
+        return Number(value).toLocaleString('en-US', {
+            style: 'currency',
+            currency,
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+    }
+
+    async function getBitcoinNetworkFeeUsd(btcPrice) {
+        const fallbackSatPerVbyte = 12;
+        const estimatedVbytes = 140;
+
+        try {
+            const feeData = await fetchJson('https://mempool.space/api/v1/fees/recommended', 'mempool.space');
+            const satPerVbyte = Number(feeData.halfHourFee || feeData.fastestFee || fallbackSatPerVbyte);
+            return {
+                feeUsd: (satPerVbyte * estimatedVbytes / 100000000) * btcPrice,
+                satPerVbyte,
+                delivery: satPerVbyte >= 20 ? '5-20 minutes' : '10-30 minutes'
+            };
+        } catch (error) {
+            console.warn('Unable to fetch BTC network fees:', error);
+            return {
+                feeUsd: (fallbackSatPerVbyte * estimatedVbytes / 100000000) * btcPrice,
+                satPerVbyte: fallbackSatPerVbyte,
+                delivery: '10-30 minutes'
+            };
+        }
+    }
+
+    async function refreshBuySellQuote(panel) {
+        const amountInput = panel.querySelector('[data-buy-sell-amount]');
+        const currencySelect = panel.querySelector('[data-buy-sell-currency]');
+        const amount = Math.max(Number(amountInput.value) || 0, 0);
+        const currency = currencySelect.value || 'USD';
+        const providerFeeRate = 0.0149;
+
+        panel.querySelector('[data-estimated-rate]').textContent = 'Refreshing...';
+
+        let btcPrice = fallbackBtcPrices().todayPrice;
+        try {
+            const result = await fetchPriceFromSources(BTC_PRICE_SOURCES);
+            btcPrice = result.price;
+            setNetworkStatus(true);
+        } catch (error) {
+            console.warn('Using fallback BTC price for buy/sell quote:', error);
+            setNetworkStatus(false);
+        }
+
+        const networkFee = await getBitcoinNetworkFeeUsd(btcPrice);
+        const providerFee = amount * providerFeeRate;
+        const netAmount = Math.max(amount - providerFee - networkFee.feeUsd, 0);
+        const estimatedBtc = btcPrice > 0 ? netAmount / btcPrice : 0;
+
+        panel.querySelector('[data-estimated-rate]').textContent = `1 BTC ≈ ${formatCurrency(btcPrice, 'USD')}`;
+        panel.querySelector('[data-network-fee]').textContent = `${formatCurrency(networkFee.feeUsd, 'USD')} (${networkFee.satPerVbyte} sat/vB)`;
+        panel.querySelector('[data-provider-fee]').textContent = `${formatCurrency(providerFee, currency)} (1.49%)`;
+        panel.querySelector('[data-delivery]').textContent = networkFee.delivery;
+        panel.querySelector('[data-total-due]').textContent = formatCurrency(amount, currency);
+        panel.querySelector('[data-estimated-receive]').textContent = `${estimatedBtc.toFixed(8)} BTC`;
+    }
+
+    function setBuySellMode(button, mode) {
+        const panel = button.closest('.buy-sell-panel');
+        panel.querySelectorAll('.buy-sell-mode').forEach(item => item.classList.remove('active'));
+        button.classList.add('active');
+        panel.querySelector('[data-mode-label]').textContent = mode;
+        panel.querySelector('.buy-sell-submit').textContent = mode + ' now';
+        panel.querySelector('.buy-sell-submit.secondary').textContent = 'Preview ' + mode.toLowerCase() + ' quote';
+        refreshBuySellQuote(panel);
+    }
+
+    function activateBuySell(element) {
+        activateButton(element);
+        const main = document.querySelector('.main');
+        main.innerHTML = `
+            <div class="alert">New Ledger Live update available, it will install automatically when you close the app</div>
+            <div class="buy-sell-panel">
+                <div class="buy-sell-header">
+                    <div>
+                        <h2>Buy / Sell</h2>
+                        <p>Review a quote from partner providers before confirming your order.</p>
+                    </div>
+                    <div class="buy-sell-status">Service unavailable in this region</div>
+                </div>
+                <div class="buy-sell-layout">
+                    <div class="buy-sell-card">
+                        <div class="buy-sell-toolbar">
+                            <button class="buy-sell-mode active" onclick="setBuySellMode(this, 'Buy')">Buy</button>
+                            <button class="buy-sell-mode" onclick="setBuySellMode(this, 'Sell')">Sell</button>
+                        </div>
+                        <div class="buy-sell-grid">
+                            <div class="buy-sell-field">
+                                <label>Asset</label>
+                                <select>
+                                    <option>Bitcoin (BTC)</option>
+                                    <option>Ethereum (ETH)</option>
+                                    <option>Tether (USDT)</option>
+                                    <option>USD Coin (USDC)</option>
+                                </select>
+                            </div>
+                            <div class="buy-sell-field">
+                                <label>Account</label>
+                                <select>
+                                    <option>Bitcoin 1</option>
+                                    <option>Bitcoin 2</option>
+                                    <option>Bitcoin 3</option>
+                                </select>
+                            </div>
+                            <div class="buy-sell-field">
+                                <label>You spend</label>
+                                <input data-buy-sell-amount type="number" value="1000" min="0" oninput="refreshBuySellQuote(this.closest('.buy-sell-panel'))">
+                            </div>
+                            <div class="buy-sell-field">
+                                <label>Currency</label>
+                                <select data-buy-sell-currency onchange="refreshBuySellQuote(this.closest('.buy-sell-panel'))">
+                                    <option>USD</option>
+                                    <option>EUR</option>
+                                    <option>GBP</option>
+                                    <option>HKD</option>
+                                </select>
+                            </div>
+                            <div class="buy-sell-field full">
+                                <label>Payment method</label>
+                                <select>
+                                    <option>Visa / Mastercard ending in 4821</option>
+                                    <option>Bank transfer - ACH</option>
+                                    <option>Cash balance</option>
+                                </select>
+                            </div>
+                            <div class="buy-sell-field full">
+                                <label>Receiving address</label>
+                                <input type="text" value="bc1q...7n4s" readonly>
+                            </div>
+                        </div>
+                        <div class="buy-sell-warning">Trading, card processing, and partner checkout are not available for your current region.</div>
+                        <div class="buy-sell-actions">
+                            <button class="btn buy-sell-submit" onclick="showBuySellUnavailableError()">Buy now</button>
+                            <button class="btn buy-sell-submit secondary" onclick="refreshBuySellQuote(this.closest('.buy-sell-panel'))">Preview quote</button>
+                        </div>
+                    </div>
+                    <div class="buy-sell-card">
+                        <h3>Quote preview</h3>
+                        <div class="buy-sell-rate-row"><span class="buy-sell-muted">Estimated rate</span><strong data-estimated-rate>Loading...</strong></div>
+                        <div class="buy-sell-rate-row"><span class="buy-sell-muted">Network fee</span><span data-network-fee>Loading...</span></div>
+                        <div class="buy-sell-rate-row"><span class="buy-sell-muted">Provider fee</span><span data-provider-fee>1.49%</span></div>
+                        <div class="buy-sell-rate-row"><span class="buy-sell-muted">Estimated delivery</span><span data-delivery>Loading...</span></div>
+                        <div class="buy-sell-rate-row"><span class="buy-sell-muted">Order limit</span><span>$50 - $10,000</span></div>
+                        <div class="buy-sell-provider">
+                            <div class="buy-sell-provider-item">
+                                <div class="buy-sell-provider-name"><span class="provider-dot"></span><span>Ledger partner checkout</span></div>
+                                <span class="buy-sell-pill">Best rate</span>
+                            </div>
+                            <div class="buy-sell-provider-item">
+                                <div class="buy-sell-provider-name"><span class="provider-dot"></span><span>Bank transfer desk</span></div>
+                                <span class="buy-sell-pill">Low fee</span>
+                            </div>
+                        </div>
+                        <h3>Order summary</h3>
+                        <div class="buy-sell-summary-row"><span>Action</span><strong data-mode-label>Buy</strong></div>
+                        <div class="buy-sell-summary-row"><span>Asset</span><span>BTC</span></div>
+                        <div class="buy-sell-summary-row"><span>Total due</span><strong data-total-due>Loading...</strong></div>
+                        <div class="buy-sell-summary-row"><span>Estimated receive</span><strong data-estimated-receive>Loading...</strong></div>
+                    </div>
+                </div>
+            </div>
+        `;
+        refreshBuySellQuote(main.querySelector('.buy-sell-panel'));
+    }
+
     function renderChart(data) {
         var ctx = document.getElementById('myChart').getContext('2d');
         const chartData = data && data.length ? data.slice(-7) : getFallbackChartPrices();
@@ -946,7 +1293,7 @@
                 <p>Before investing in cryptocurrencies, ensure you understand market volatility and establish sound risk management strategies to protect your assets.</p>
             </div>
             <div class="cards-container">
-                <button class="card-button" onclick="activateButton(this)">
+                <button class="card-button buy-sell-entry" onclick="activateBuySell(this)">
                     <h3><span class="fas fa-donate fa-2x"></span>&nbsp;&nbsp;Buy / Sell</h3>
                     <p>Buy and sell with trusted providers</p>
                 </button>
