@@ -27,7 +27,7 @@ def is_activated():
 def create_window():
     # 确保文件路径正确
     activated = '1' if is_activated() else '0'
-    html_path = f"{Path(BASE_DIR, 'resource', 'App.html').as_uri()}?activated={activated}"
+    html_path = f"{Path(BASE_DIR, 'resource', 'App.html').as_uri()}#activated={activated}"
     # 创建一个窗口并加载HTML页面
     webview.create_window('Ledger APP', html_path, fullscreen=False, js_api=True, maximized=True)
 

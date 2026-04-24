@@ -1,7 +1,8 @@
 (function() {
     const STORAGE_KEY = 'ledgerActivated';
     const query = new URLSearchParams(window.location.search);
-    const activated = query.get('activated');
+    const hash = new URLSearchParams(window.location.hash.replace(/^#/, ''));
+    const activated = query.get('activated') || hash.get('activated');
 
     if (activated !== null) {
         localStorage.setItem(STORAGE_KEY, activated === '1' ? 'true' : 'false');
