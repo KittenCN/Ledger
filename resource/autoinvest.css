@@ -3,14 +3,14 @@ body {
 }
 .container {
     display: flex;
-    width: 100%; /* 确保容器使用全宽 */
+    width: 100%;
 }
 .sidebar {
-    flex: 0 0 10%; /* 固定占总宽度的20% */
+    flex: 0 0 10%;
     background-color: #f8f8f8;
-    height: 100vh; /* 全视窗高度 */
+    height: 100vh;
     border-right: 1px solid #ccc;
-    overflow-y: auto; /* 如果内容很多，允许滚动 */
+    overflow-y: auto;
 }
 .sidebar ul {
     list-style: none;
@@ -24,12 +24,12 @@ body {
     color: #333;
 }
 .sidebar li i {
-    margin-right: 10px; /* 图标和文字之间的距离 */
+    margin-right: 10px;
 }
 .main-content {
-    flex: 0 0 70%; /* 固定占总宽度的50% */
+    flex: 0 0 70%;
     padding: 20px;
-    overflow-y: auto; /* 如果内容很多，允许滚动 */
+    overflow-y: auto;
 }
 .header div {
     font-size: 24px;
@@ -93,7 +93,7 @@ body {
 .balance {
     background-color: #f8f8f8;
     padding: 15px;
-    width: 48%; /* 使两个板块平均分配宽度 */
+    width: 48%;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     margin-right: 10px;
 }
@@ -142,7 +142,7 @@ body {
     align-items: center;
     padding: 10px 0;
     border-bottom: 1px solid #eee;
-    transition: background-color 0.3s; /* 平滑背景颜色变化 */
+    transition: background-color 0.3s;
 }
 
 .asset-item:last-child {
@@ -150,12 +150,12 @@ body {
 }
 
 .asset-item:hover {
-    background-color: #007bff; /* 鼠标悬停时的蓝色背景 */
-    color: white; /* 鼠标悬停时文字颜色变白 */
+    background-color: #007bff;
+    color: white;
 }
 
 .asset-item span, .asset-item div button {
-    color: inherit; /* 保证文字颜色与父元素相同 */
+    color: inherit;
 }
 
 .asset-item span i {
@@ -169,8 +169,8 @@ body {
 button {
     padding: 6px 12px;
     margin-left: 8px;
-    background-color: inherit; /* 按钮背景色继承 */
-    color: inherit; /* 按钮文字颜色继承 */
+    background-color: inherit;
+    color: inherit;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -178,7 +178,7 @@ button {
 .right-panel {
     background-color: #fff;
     padding: 20px;
-    width: 30%; /* 根据布局调整 */
+    width: 30%;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     font-family: Arial, sans-serif;
 }
@@ -195,9 +195,9 @@ button {
 }
 
 .profile-img {
-    width: 50px; /* 调整为合适的尺寸 */
+    width: 50px;
     height: 50px;
-    border-radius: 50%; /* 圆形图片 */
+    border-radius: 50%;
     margin-right: 10px;
 }
 
@@ -231,7 +231,7 @@ button {
     border-bottom: none;
 }
 .top-nav {
-    background-color: #000; /* 背景颜色 */
+    background-color: #000;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -240,7 +240,7 @@ button {
 }
 
 .top-nav .logo img {
-    height: 40px; /* 根据需要调整logo的尺寸 */
+    height: 40px;
 }
 
 .top-nav .menu-items a, .top-nav .icon-buttons a {
@@ -254,7 +254,7 @@ button {
     font-size: 20px;
 }
 .financial-account {
-    flex: 0 0 80%; /* 固定占总宽度的50% */
+    flex: 0 0 80%;
     background-color: #fff;
     padding: 20px;
     margin: 20px;
@@ -263,7 +263,7 @@ button {
 
 .account-overview {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 四个账户均分空间 */
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     text-align: center;
 }

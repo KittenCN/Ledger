@@ -1,4 +1,4 @@
-﻿
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,12 +11,12 @@
     body { font-family: Arial, sans-serif; color: white; background-color: #121212; margin: 0; padding: 0; }
     .container { display: flex; height: 100vh; }
     .sidebar { width: 240px; background-color: #333; padding: 20px; }
-    .main { 
-        flex-grow: 1; 
-        padding: 20px; 
+    .main {
+        flex-grow: 1;
+        padding: 20px;
         position: relative;
-        align-items: center; /* 鍨傜洿灞呬腑 */
-        justify-content: center; /* 姘村钩灞呬腑 */
+        align-items: center;
+        justify-content: center;
     }
     @keyframes spin {
         0% { transform: rotate(0deg); }
@@ -26,109 +26,109 @@
         .top-right-icons {
             top: 0;
             right: 0;
-            font-size: 16px; /* 鍦ㄥ皬灞忓箷涓婄◢寰噺灏忓浘鏍囧ぇ灏?*/
+            font-size: 16px;
         }
         .alert {
-            top: 35px; /* 灏忓睆骞曚笂鍙兘闇€瑕佷笉鍚岀殑瀹氫綅 */
+            top: 35px;
         }
     }
     @media (max-width: 600px) {
         .demo-overlay::before {
-            font-size: 3em; /* 杈冨皬灞忓箷涓婁娇鐢ㄦ洿灏忕殑瀛椾綋澶у皬 */
+            font-size: 3em;
         }
     }
     .loading-icon {
-        border: 4px solid #f3f3f3; /* Light grey */
-        border-top: 4px solid #3498db; /* Blue */
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #3498db;
         border-radius: 50%;
         width: 20px;
         height: 20px;
         animation: spin 2s linear infinite;
-        display: none; /* 榛樿涓嶆樉绀?*/
+        display: none;
     }
     .tips {
-        background-color: #333; /* Dark background for visibility */
-        color: #fff; /* White text color */
+        background-color: #333;
+        color: #fff;
         flex-direction: column;
-        text-align: left; /* Align text to the left */
-        justify-content: flex-start; /* Start content from the left */
+        text-align: left;
+        justify-content: flex-start;
         padding: 20px;
-        margin-bottom: 20px; /* Space between the tip and the cards */
-        height: 150px; /* 1.5 times the height of the buttons */
+        margin-bottom: 20px;
+        height: 150px;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
     }
     .menu-button {
-        display: flex; 
-        align-items: center; 
-        width: 100%; 
-        background-color: #444; 
-        color: white; 
-        border: none; 
-        padding: 15px; 
-        margin-bottom: 15px; 
-        cursor: pointer; 
+        display: flex;
+        align-items: center;
+        width: 100%;
+        background-color: #444;
+        color: white;
+        border: none;
+        padding: 15px;
+        margin-bottom: 15px;
+        cursor: pointer;
         text-align: left;
-        position: relative; /* Position relative for the dot */
+        position: relative;
     }
     .add-account-button {
-        display: flex; 
-        align-items: center; 
-        justify-content: center; /* 涓績瀵归綈鍐呭 */
-        width: 100%; 
-        background-color: #444; 
-        color: white; 
-        border: none; 
-        padding: 15px; 
-        margin-bottom: 15px; 
-        cursor: pointer; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background-color: #444;
+        color: white;
+        border: none;
+        padding: 15px;
+        margin-bottom: 15px;
+        cursor: pointer;
         text-align: left;
-        position: relative; /* Position relative for the dot */
+        position: relative;
     }
     .card-button {
-        display: flex; 
-        align-items: center; 
-        flex-direction: column; /* 纭繚鍐呭鍨傜洿鎺掑垪 */
-        justify-content: center; /* 涓績瀵归綈鍐呭 */
-        width: 100%; 
-        background-color: #444; 
-        color: white; 
-        border: none; 
-        padding: 15px; 
-        margin-bottom: 15px; 
-        cursor: pointer; 
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        background-color: #444;
+        color: white;
+        border: none;
+        padding: 15px;
+        margin-bottom: 15px;
+        cursor: pointer;
         text-align: left;
-        position: relative; /* Position relative for the dot */
+        position: relative;
     }
     .icons-button {
-        display: flex; 
-        align-items: center; 
-        flex-direction: column; /* 纭繚鍐呭鍨傜洿鎺掑垪 */
-        justify-content: center; /* 涓績瀵归綈鍐呭 */
-        width: 100%; 
-        background-color: transparent; 
-        color: white; 
-        border: none; 
-        padding: 1px; 
-        margin-bottom: 1px; 
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        background-color: transparent;
+        color: white;
+        border: none;
+        padding: 1px;
+        margin-bottom: 1px;
     }
     .icons-button.active {
-        background-color: transparent; 
-        color: #fff; /* Brighten text */
+        background-color: transparent;
+        color: #fff;
     }
     .menu-button.active, .card-button.active {
-        background-color: #555; /* Highlight background */
-        color: #fff; /* Brighten text */
+        background-color: #555;
+        color: #fff;
     }
     .menu-button.active::after{
         content: '';
         position: absolute;
-        right: 10px; 
+        right: 10px;
         width: 10px;
         height: 10px;
-        background-color: #7d4dcc; 
+        background-color: #7d4dcc;
         border-radius: 50%;
     }
     .icon {
@@ -143,31 +143,31 @@
         height: 20px;
         margin-right: 10px;
         display: inline-block;
-        background-color: #fff; /* 榛樿棰滆壊锛屽皢琚獼S瑕嗙洊 */
+        background-color: #fff;
     }
     .cards-container {
         display: flex;
         justify-content: space-between;
-        gap: 20px;  /* 杩欓噷鍙互鏍规嵁鎮ㄧ殑闇€姹傝皟鏁撮棿闅欏ぇ灏?*/
+        gap: 20px;
     }
     .chart-container {
-        display: none; /* 榛樿闅愯棌鍥捐〃 */
-        background-color: #333; /* 娣辩伆鑹茶儗鏅?*/
+        display: none;
+        background-color: #333;
         color: #fff;
         padding: 20px;
-        margin: 0 20px 20px; /* 璋冩暣宸﹀彸杈硅窛浠ヤ笌渚ц竟鏍忓榻?*/
-        border-radius: 5px; /* 杞诲井鍦嗚 */
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 杞诲井闃村奖鏁堟灉 */
-        max-height: 500px; /* 闄愬埗鏈€澶ч珮搴︿负300px鎴栨洿灏忥紝鏍规嵁闇€瑕佽皟鏁?*/
-        height: 100%; /* 纭繚瀹瑰櫒濉弧鍙敤绌洪棿浣嗕笉瓒呭嚭max-height */
+        margin: 0 20px 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        max-height: 500px;
+        height: 100%;
     }
     .canvas {
-        display: block; /* 鍧楃骇鏄剧ず娑堥櫎搴曢儴闂撮殭 */
-        width: 100%; /* 濉厖鏁翠釜瀹瑰櫒瀹藉害 */
-        height: auto; /* 楂樺害鑷姩閫傚簲鍐呭 */
+        display: block;
+        width: 100%;
+        height: auto;
     }
     .negative-change {
-        color: red; /* 璁剧疆鏂囧瓧棰滆壊涓虹孩鑹?*/
+        color: red;
     }
     .accounts-container {
         width: 100%;
@@ -179,39 +179,39 @@
     }
     .new-tag {
         display: inline-block;
-        background-color: #6c5ce7; /* 娣＄传鑹茶儗鏅?*/
-        color: white; /* 鐧借壊鏂囨湰 */
-        padding: 3px 8px; /* 鍐呰竟璺?*/
-        border-radius: 10px; /* 鍦嗚 */
-        font-size: 12px; /* 瀛椾綋澶у皬 */
-        margin-left: 10px; /* 涓庡墠涓€涓厓绱犵殑闂撮殧 */
+        background-color: #6c5ce7;
+        color: white;
+        padding: 3px 8px;
+        border-radius: 10px;
+        font-size: 12px;
+        margin-left: 10px;
     }
     .top-right-icons {
-        position: fixed; /* 浣跨敤 fixed 淇濇寔鍥炬爣鐩稿浜庤鍙ｅ浐瀹?*/
-        top: 10px; /* 璺濈椤堕儴鐨勮窛绂伙紝鏍规嵁闇€瑕佽皟鏁?*/
-        right: 10px; /* 璺濈鍙充晶鐨勮窛绂?*/
+        position: fixed;
+        top: 10px;
+        right: 10px;
         display: flex;
         align-items: center;
-        z-index: 1000; /* 纭繚鍥炬爣鍦ㄨ鍛婃潯涔嬩笂 */
+        z-index: 1000;
     }
 
     .top-right-icons i {
-        color: white; /* 璁剧疆鍥炬爣棰滆壊 */
-        margin-left: 15px; /* 鍥炬爣涔嬮棿鐨勯棿闅?*/
-        font-size: 18px; /* 鍥炬爣澶у皬 */
-        cursor: pointer; /* 榧犳爣鎮仠鏃舵樉绀烘寚閽?*/
+        color: white;
+        margin-left: 15px;
+        font-size: 18px;
+        cursor: pointer;
     }
 
     .alert {
-        position: absolute; /* 缁濆瀹氫綅 */
-        top: 0; /* 缃《 */
-        left: 20%; /* 涓庝富浣撳唴瀹瑰乏杈瑰榻?*/
-        right:20%; /* 涓庝富浣撳唴瀹瑰彸杈瑰榻?*/
+        position: absolute;
+        top: 0;
+        left: 20%;
+        right:20%;
         background-color: #ff5722;
         color: white;
         padding: 10px;
         text-align: center;
-        z-index: 100; /* 纭繚鍦ㄤ富浣撳唴瀹逛箣涓?*/
+        z-index: 100;
     }
     .demo-overlay {
         display: none;
@@ -220,57 +220,57 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0); /* 閫忔槑鑳屾櫙锛屼笉骞叉壈瑙嗚 */
+        background: rgba(0, 0, 0, 0);
         display: flex;
         align-items: center;
         justify-content: center;
         z-index: 2000;
-        pointer-events: none; /* 鍏抽敭锛氫娇榧犳爣浜嬩欢绌块€忚鐩栧眰 */
+        pointer-events: none;
     }
 
     .demo-overlay::before {
         display: none;
         content: 'DEMO VERSION';
-        font-size: 5em; /* 澶у瓧浣撳ぇ灏?*/
-        color: rgba(255, 255, 255, 0.2); /* 杞诲井閫忔槑鐨勭櫧鑹叉枃瀛?*/
-        transform: rotate(-45deg); /* 灏嗘枃瀛楁棆杞?45搴?*/
-        position: absolute; /* 缁濆瀹氫綅浣垮叾鍙互瑕嗙洊鏇村箍 */
-        width: 100vw; /* 纭繚瀹藉害瓒冲瑕嗙洊灞忓箷 */
+        font-size: 5em;
+        color: rgba(255, 255, 255, 0.2);
+        transform: rotate(-45deg);
+        position: absolute;
+        width: 100vw;
         text-align: center;
-        white-space: nowrap; /* 閬垮厤鏂囧瓧鎹㈣ */
-    }
-    /* Modal container */
-    .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1040; /* Sit on top */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-        overflow-x: hidden; /* 闃叉姘村钩婊氬姩 */
-        overflow-y: auto; /* 鍏佽鍨傜洿婊氬姩 */
+        white-space: nowrap;
     }
 
-    /* Modal Content */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1040;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+
     .modal-content {
         background-color: #333;
         padding: 20px;
         border: 1px solid #888;
-        width: 100%; /* 浣跨敤鐧惧垎姣斿畾涔夊搴︼紝纭繚鍝嶅簲寮?*/
-        max-width: 450px; /* 鏈€澶у搴︿负1000px */
-        position: fixed; /* 鍥哄畾浣嶇疆 */
-        top: 50%; /* 鍚戜笅绉诲姩50% */
-        left: 50%; /* 鍚戝彸绉诲姩50% */
-        transform: translate(-50%, -50%); /* 浣跨敤translate纭繚瀹屽叏灞呬腑 */
+        width: 100%;
+        max-width: 450px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-        z-index: 1050; /* 纭繚妯℃€佹鍦ㄥ叾浠栧唴瀹逛箣涓?*/
+        z-index: 1050;
     }
 
-    /* The Close Button */
+
     .close {
         color: white;
         float: right;
@@ -285,17 +285,17 @@
         cursor: pointer;
     }
 
-    /* Modal Header */
+
     .modal-header {
         padding: 2px 16px;
         background-color: #333;
         color: white;
     }
 
-    /* Modal Body */
+
     .modal-body {padding: 2px 16px;}
 
-    /* Modal Footer */
+
     .modal-footer {
         padding: 2px 16px;
         background-color: #333;
@@ -317,7 +317,7 @@
         height: 40px;
         background-color:#333;
         color: white;
-        appearance: none; /* Remove default style of select */
+        appearance: none;
         -webkit-appearance: none;
         -moz-appearance: none;
     }
@@ -330,7 +330,7 @@
         bottom: 0;
         font-size: 16px;
         color: #888;
-        pointer-events: none; /* Ensure the arrow won't interfere with the select */
+        pointer-events: none;
         line-height: 40px;
         text-align: center;
     }
@@ -348,20 +348,20 @@
     .step {
         display: flex;
         align-items: center;
-        color: #aaa; /* 榛樿棰滆壊 */
+        color: #aaa;
     }
 
     .step.active {
-        color: #fff; /* 婵€娲荤姸鎬侀鑹?*/
+        color: #fff;
     }
 
     .step i {
-        margin-right: 5px; /* 鍥炬爣鍜屾枃鏈箣闂寸殑闂撮殧 */
+        margin-right: 5px;
     }
     .actions {
         display: flex;
-        justify-content: flex-end; /* 鍙冲榻?*/
-        padding: 20px; /* 鎴栧叾浠栭€傚綋鐨勯棿璺?*/
+        justify-content: flex-end;
+        padding: 20px;
     }
 
     .btn {
@@ -386,7 +386,7 @@
     .status-icon {
         display: flex;
         align-items: center;
-        margin-right: 15px; /* 鏍规嵁闇€瑕佽皟鏁撮棿璺?*/
+        margin-right: 15px;
     }
     .custom-input {
         padding: 10px;
@@ -395,10 +395,10 @@
         height: 40px;
         background-color:#333;
         color: white;
-        font-size: 2em; /* 澶у瓧浣撳ぇ灏?*/
-        width: 100vw; /* 纭繚瀹藉害瓒冲瑕嗙洊灞忓箷 */
+        font-size: 2em;
+        width: 100vw;
         text-align: center;
-        white-space: nowrap; /* 閬垮厤鏂囧瓧鎹㈣ */
+        white-space: nowrap;
     }
     table {
         width: 100%;
@@ -414,17 +414,17 @@
 </style>
 </head>
 <body>
-    <div class="demo-overlay"></div>    
+    <div class="demo-overlay"></div>
     <div class="top-right-icons">
         <div class="status-icon">
             <button class="icons-button exclude" onclick="activateMyLedger(this)"><i id="network-status-icon" class="fas fa-check-circle" style="color: #28a745;"></i></button>
             <span id="network-status-text" style="color: white; margin-left: 5px;">Confirmed</span>
         </div>
-        <button class="icons-button" onclick="handleMenuButtonClick(this)"><i class="fas fa-bell"></i></button> <!-- 閫氱煡鍥炬爣 -->
-        <button class="icons-button" onclick="handleMenuButtonClick(this)"><i class="fas fa-envelope"></i></button> <!-- 閭欢鍥炬爣 -->
-        <button class="icons-button" onclick="handleMenuButtonClick(this)"><i class="fas fa-cog"></i></button> <!-- 璁剧疆鍥炬爣 -->
-        <button class="icons-button exclude" onclick="activateMyLedger(this)"><i class="fas fa-user-circle"></i></button> <!-- 鐢ㄦ埛鍥炬爣 -->
-    </div> 
+        <button class="icons-button" onclick="handleMenuButtonClick(this)"><i class="fas fa-bell"></i></button>
+        <button class="icons-button" onclick="handleMenuButtonClick(this)"><i class="fas fa-envelope"></i></button>
+        <button class="icons-button" onclick="handleMenuButtonClick(this)"><i class="fas fa-cog"></i></button>
+        <button class="icons-button exclude" onclick="activateMyLedger(this)"><i class="fas fa-user-circle"></i></button>
+    </div>
     <div class="container">
         <div class="sidebar">
             <button class="menu-button portfolio exclude" onclick="activatePortfolio(this)"><span class="fas fa-house-user"></span>&nbsp;&nbsp;Portfolio</button>
@@ -442,7 +442,7 @@
             <button class="menu-button exclude" onclick="activateMyLedger(this)"><span class="fas fa-server"></span>&nbsp;&nbsp;My Ledger</button>
         </div>
         <div class="main">
-            <div class="alert">New Ledger Live update available, it will install automatically when you close the app</div>   
+            <div class="alert">New Ledger Live update available, it will install automatically when you close the app</div>
             <div class="tips">
                 <h3>Tips:</h3>
                 <p>Before investing in cryptocurrencies, ensure you understand market volatility and establish sound risk management strategies to protect your assets.</p>
@@ -466,10 +466,10 @@
                             <td>$472,420.00</td>
                             <td>Active</td>
                         </tr>
-                        <!-- 鏇村琛?-->
+
                     </tbody>
                 </table>
-            </div>        
+            </div>
             <div class="cards-container">
                 <button class="card-button" onclick="activateButton(this)">
                     <h3><span class="fas fa-donate fa-2x"></span>&nbsp;&nbsp;Buy / Sell</h3>
@@ -749,7 +749,7 @@
         const main = document.querySelector('.main');
         main.addEventListener('click', function(event) {
             if (event.target.classList.contains('card-button')) {
-                // console.log("Button was clicked!", event.target.textContent);
+
                 handleMenuButtonClick(event.target);
             }
         });
@@ -757,7 +757,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         var icons = document.querySelectorAll('.preicon');
         icons.forEach(function(icon) {
-            // 鐢熸垚闅忔満棰滆壊
+
             var randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
             icon.style.backgroundColor = randomColor;
         });
@@ -789,7 +789,7 @@
     }
 
     function formatDate(date) {
-        return `${date.getMonth() + 1}/${date.getDate()}`; // 鏍煎紡涓?鏈?鏃?
+        return `${date.getMonth() + 1}/${date.getDate()}`;
     }
     function handleMenuButtonClick(button) {
         const loadingIcon = document.createElement('div');
@@ -835,8 +835,9 @@
                     y: {
                         beginAtZero: false,
                         ticks: {
-                            // 鑷姩缂╂斁Y杞村埢搴?                            autoSkip: true,
-                            maxTicksLimit: 5, // 鏈€澶氭樉绀?涓埢搴?                            stepSize: 1000 // 鑷畾涔夋闀匡紝鏍规嵁鏁版嵁鑼冨洿璋冩暣
+                            autoSkip: true,
+                            maxTicksLimit: 5,
+                            stepSize: 1000
                         }
                     }
                 }
@@ -847,7 +848,7 @@
         const accountsContainer  = document.createElement('accounts-container');
         accountsContainer .style.display = 'block';
         activateButton(element);
-        // const btcPrice = await getCurrentBtcPrice();  // 鑾峰彇褰撳墠BTC浠锋牸
+
         const { todayPrice, yesterdayPrice } = await getBitcoinPrices();
         const btcPrice = todayPrice;
         const accountsData = [
@@ -858,7 +859,7 @@
 
         const main = document.querySelector('.main');
         let accountsHtml = `
-            <div class="alert">New Ledger Live update available, it will install automatically when you close the app</div>   
+            <div class="alert">New Ledger Live update available, it will install automatically when you close the app</div>
             <div class="accounts-container">
                 <table>
                     <thead>
@@ -873,7 +874,7 @@
                     </thead>
                     <tbody>`;
 
-        // 涓烘瘡涓处鎴锋坊鍔犺
+
         accountsData.forEach(account => {
             const value = (account.btcAmount * btcPrice).toLocaleString('en-US', {
                 style: 'currency',
@@ -903,8 +904,8 @@
                 </table>
             </div>`;
 
-        main.innerHTML = accountsHtml;  // 鏇存柊main鍐呭
-        main.appendChild(accountsContainer); // 娣诲姞accountsContainer
+        main.innerHTML = accountsHtml;
+        main.appendChild(accountsContainer);
     }
 
     async function activatePortfolio(element) {
@@ -935,11 +936,11 @@
                             <td>$472,420.00</td>
                             <td>Active</td>
                         </tr>
-                        <!-- 鏇村琛?-->
+
                     </tbody>
                 </table>
-            </div>        
-            <div class="alert">New Ledger Live update available, it will install automatically when you close the app</div>   
+            </div>
+            <div class="alert">New Ledger Live update available, it will install automatically when you close the app</div>
             <div class="tips">
                 <h3>Tips:</h3>
                 <p>Before investing in cryptocurrencies, ensure you understand market volatility and establish sound risk management strategies to protect your assets.</p>
@@ -994,11 +995,11 @@
         try {
             const { price } = await fetchPriceFromSources(BTC_PRICE_SOURCES);
             setNetworkStatus(true);
-            return price;  // 鑾峰彇BTC褰撳墠浠锋牸
+            return price;
         } catch (error) {
             console.error('Error fetching BTC price:', error);
             setNetworkStatus(false);
-            return fallbackBtcPrices().todayPrice;  // 鍦ㄩ敊璇儏鍐典笅杩斿洖鍏滃簳浠锋牸
+            return fallbackBtcPrices().todayPrice;
         }
     }
     async function getBitcoinPrices() {
@@ -1010,7 +1011,7 @@
         const yesterdayTimestamp = Math.floor(yesterday.getTime() / 1000);
 
         const url = `https://api.coingecko.com/api/v3/coins/bitcoin/market_chart/range?vs_currency=usd&from=${yesterdayTimestamp}&to=${todayTimestamp}`;
-        
+
         try {
             const response = await fetch(url);
             if (!response.ok) {
@@ -1047,22 +1048,22 @@
         }
     }
     function activateSend(element) {
-        // 灏嗗彂閫佹寜閽缃负婵€娲荤姸鎬?        activateButton(element);
+        activateButton(element);
 
-        // 鏄剧ず妯℃€佹
+
         var modal = document.getElementById('sendModal');
-        // var btn = document.getElementById("myBtn");
+
         modal.style.display = "block";
 
-        // 鑾峰彇鍏抽棴鎸夐挳
+
         var closeButton = modal.querySelector('.close');
 
-        // 褰撶敤鎴风偣鍑诲叧闂寜閽?(x)锛屽叧闂ā鎬佹
+
         closeButton.onclick = function() {
             modal.style.display = "none";
         }
 
-        // 褰撶敤鎴风偣鍑绘ā鎬佹澶栭儴鏃讹紝涔熷叧闂ā鎬佹
+
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
@@ -1070,22 +1071,22 @@
         }
     }
     function activateReceive(element) {
-        // 灏嗗彂閫佹寜閽缃负婵€娲荤姸鎬?        activateButton(element);
+        activateButton(element);
 
-        // 鏄剧ず妯℃€佹
+
         var modal = document.getElementById('receiveModal');
-        // var btn = document.getElementById("myBtn");
+
         modal.style.display = "block";
 
-        // 鑾峰彇鍏抽棴鎸夐挳
+
         var closeButton = modal.querySelector('.close');
 
-        // 褰撶敤鎴风偣鍑诲叧闂寜閽?(x)锛屽叧闂ā鎬佹
+
         closeButton.onclick = function() {
             modal.style.display = "none";
         }
 
-        // 褰撶敤鎴风偣鍑绘ā鎬佹澶栭儴鏃讹紝涔熷叧闂ā鎬佹
+
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
@@ -1095,33 +1096,33 @@
     function activateMyLedger(element) {
         activateButton(element);
         const main = document.querySelector('.main');
-        // 娓呴櫎鐜版湁鐨勫唴閮ㄥ厓绱?        main.innerHTML = '<div class="alert">New Ledger Live update available, it will install automatically when you close the app</div>   ';
-        // 鍒涘缓鍥剧墖鍜屾枃瀛楀鍣?        const content = document.createElement('div');
+        main.innerHTML = '<div class="alert">New Ledger Live update available, it will install automatically when you close the app</div>';
+
+        const content = document.createElement('div');
         content.style.display = 'flex';
         content.style.flexDirection = 'column';
         content.style.alignItems = 'center';
         content.style.justifyContent = 'center';
         content.style.height = '100%';
 
-        // 鍒涘缓鍥剧墖鍏冪礌
         const img = document.createElement('img');
-        img.src = './myledger.png'; // 纭繚鍥剧墖璺緞姝ｇ‘
+        img.src = './myledger.png';
         img.alt = 'My Ledger Device';
-        img.style.maxWidth = '600px'; // 鎺у埗鍥剧墖鏈€澶у搴?        img.style.width = '100%'; // 鍝嶅簲寮忓搴?
-        // 鍒涘缓鏂囧瓧鍏冪礌
+        img.style.maxWidth = '600px';
+        img.style.width = '100%';
+
         const text = document.createElement('p');
         text.textContent = 'Connect and unlock your device';
         text.style.color = 'white';
         text.style.fontSize = '18px';
         text.style.marginTop = '20px';
 
-        // 灏嗗浘鐗囧拰鏂囧瓧娣诲姞鍒板唴瀹瑰鍣?        content.appendChild(img);
+        content.appendChild(img);
         content.appendChild(text);
-
-        // 灏嗗唴瀹瑰鍣ㄦ坊鍔犲埌涓诲鍣?        main.appendChild(content);
+        main.appendChild(content);
     }
 </script>
-<!-- Modal -->
+
 <div id="sendModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
@@ -1132,8 +1133,8 @@
             <div class="step"><i class="fas fa-key fa-2x"></i><span> Security</span></div>
             <div class="step"><i class="fas fa-user-check fa-2x"></i><span> Verify</span></div>
             <div class="step"><i class="fas fa-check-circle fa-2x"></i><span> Complete</span></div>
-        </div> 
-        <br>      
+        </div>
+        <br>
         <label for="account">Select Account</label>
         <br><br>
         <div class="custom-select-wrapper">
@@ -1153,8 +1154,8 @@
         </div>
       </form>
     </div>
-  </div>  
-<!-- Receive Modal -->
+  </div>
+
 <div id="receiveModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
@@ -1164,7 +1165,7 @@
                 <div class="step active"><i class="fas fa-id-badge fa-2x"></i><span> Account</span></div>
                 <div class="step"><i class="fas fa-server fa-2x"></i><span> Device</span></div>
                 <div class="step"><i class="fas fa-download fa-2x"></i><span> Receive</span></div>
-            </div> 
+            </div>
             <br>
             <label for="account">Credit Account</label>
             <br><br>
