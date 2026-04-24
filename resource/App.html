@@ -417,8 +417,8 @@
     <div class="demo-overlay"></div>    
     <div class="top-right-icons">
         <div class="status-icon">
-            <button class="icons-button exclude" onclick="activateMyLedger(this)"><i class="fas fa-check-circle" style="color: #28a745;"></i></button>
-            <span style="color: white; margin-left: 5px;">Confirmed</span>
+            <button class="icons-button exclude" onclick="activateMyLedger(this)"><i id="network-status-icon" class="fas fa-check-circle" style="color: #28a745;"></i></button>
+            <span id="network-status-text" style="color: white; margin-left: 5px;">Confirmed</span>
         </div>
         <button class="icons-button" onclick="handleMenuButtonClick(this)"><i class="fas fa-bell"></i></button> <!-- 通知图标 -->
         <button class="icons-button" onclick="handleMenuButtonClick(this)"><i class="fas fa-envelope"></i></button> <!-- 邮件图标 -->
@@ -554,6 +554,43 @@
 
         return Array.from(dailyPrices, ([date, close]) => ({ date, close })).slice(-7);
     }
+
+    function setNetworkStatus(isOnline) {
+        const icon = document.getElementById('network-status-icon');
+        const text = document.getElementById('network-status-text');
+
+        if (!icon || !text) {
+            return;
+        }
+
+        icon.classList.toggle('fa-check-circle', isOnline);
+        icon.classList.toggle('fa-times-circle', !isOnline);
+        icon.style.color = isOnline ? '#28a745' : '#dc3545';
+        text.textContent = isOnline ? 'Confirmed' : 'Network Error';
+    }
+
+    async function checkNetworkStatus() {
+        if (!navigator.onLine) {
+            setNetworkStatus(false);
+            return;
+        }
+
+        try {
+            const response = await fetch('https://api.coingecko.com/api/v3/ping', {
+                cache: 'no-store'
+            });
+            setNetworkStatus(response.ok);
+        } catch (error) {
+            setNetworkStatus(false);
+        }
+    }
+
+    window.addEventListener('online', checkNetworkStatus);
+    window.addEventListener('offline', () => setNetworkStatus(false));
+    document.addEventListener('DOMContentLoaded', function() {
+        checkNetworkStatus();
+        setInterval(checkNetworkStatus, 30000);
+    });
 
     document.addEventListener('DOMContentLoaded', function() {
         const main = document.querySelector('.main');
@@ -806,9 +843,11 @@
             }
             const dailyPrices = getDailyClosingPrices(data.prices)
                 .filter(item => isValidPrice(item.close));
+            setNetworkStatus(true);
             return dailyPrices.length ? dailyPrices : getFallbackChartPrices();
         } catch (error) {
             console.error('Error fetching data:', error);
+            setNetworkStatus(false);
             return getFallbackChartPrices();
         }
     }
@@ -823,9 +862,11 @@
             if (!isValidPrice(price)) {
                 throw new Error('CoinGecko returned an invalid BTC price');
             }
+            setNetworkStatus(true);
             return price;  // 获取BTC当前价格
         } catch (error) {
             console.error('Error fetching BTC price:', error);
+            setNetworkStatus(false);
             return fallbackBtcPrices().todayPrice;  // 在错误情况下返回兜底价格
         }
     }
@@ -855,9 +896,11 @@
                 throw new Error('CoinGecko returned invalid BTC prices');
             }
             writeCachedBtcPrices(todayPrice, yesterdayPrice);
+            setNetworkStatus(true);
             return { todayPrice, yesterdayPrice };
         } catch (error) {
             console.error('Error fetching BTC prices:', error);
+            setNetworkStatus(false);
             return fallbackBtcPrices();
         }
     }
