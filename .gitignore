@@ -1,0 +1,7 @@
+build/
+dist/
+__pycache__/
+.venv-build/
+*.egg-info/
+*.pyc
+ledger_embedded_resources.py

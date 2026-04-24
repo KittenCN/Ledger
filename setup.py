@@ -1,0 +1,44 @@
+from pathlib import Path
+import sys
+
+from cx_Freeze import Executable, setup
+from tools.embed_resources import build_resource_module
+
+
+ROOT = Path(__file__).resolve().parent
+RESOURCE_DIR = ROOT / "resource"
+ICON_FILE = RESOURCE_DIR / "IconGroup1.ico"
+EMBEDDED_RESOURCE_MODULE = ROOT / "ledger_embedded_resources.py"
+
+build_resource_module(RESOURCE_DIR, EMBEDDED_RESOURCE_MODULE)
+
+build_exe_options = {
+    "build_exe": str(ROOT / "build" / "Ledger"),
+    "packages": ["webview"],
+    "includes": [
+        "ledger_embedded_resources",
+        "webview.platforms.edgechromium",
+        "webview.platforms.mshtml",
+        "webview.platforms.winforms",
+    ],
+    "include_msvcr": True,
+}
+
+base = "gui" if sys.platform == "win32" else None
+
+executables = [
+    Executable(
+        script="Ledger.py",
+        base=base,
+        target_name="Ledger.exe",
+        icon=str(ICON_FILE),
+    )
+]
+
+setup(
+    name="Ledger",
+    version="1.0.0",
+    description="Ledger desktop shell built with pywebview",
+    options={"build_exe": build_exe_options},
+    executables=executables,
+)
