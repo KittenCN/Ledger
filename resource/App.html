@@ -1,4 +1,4 @@
-
+﻿
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,8 +15,8 @@
         flex-grow: 1; 
         padding: 20px; 
         position: relative;
-        align-items: center; /* 垂直居中 */
-        justify-content: center; /* 水平居中 */
+        align-items: center; /* 鍨傜洿灞呬腑 */
+        justify-content: center; /* 姘村钩灞呬腑 */
     }
     @keyframes spin {
         0% { transform: rotate(0deg); }
@@ -26,15 +26,15 @@
         .top-right-icons {
             top: 0;
             right: 0;
-            font-size: 16px; /* 在小屏幕上稍微减小图标大小 */
+            font-size: 16px; /* 鍦ㄥ皬灞忓箷涓婄◢寰噺灏忓浘鏍囧ぇ灏?*/
         }
         .alert {
-            top: 35px; /* 小屏幕上可能需要不同的定位 */
+            top: 35px; /* 灏忓睆骞曚笂鍙兘闇€瑕佷笉鍚岀殑瀹氫綅 */
         }
     }
     @media (max-width: 600px) {
         .demo-overlay::before {
-            font-size: 3em; /* 较小屏幕上使用更小的字体大小 */
+            font-size: 3em; /* 杈冨皬灞忓箷涓婁娇鐢ㄦ洿灏忕殑瀛椾綋澶у皬 */
         }
     }
     .loading-icon {
@@ -44,7 +44,7 @@
         width: 20px;
         height: 20px;
         animation: spin 2s linear infinite;
-        display: none; /* 默认不显示 */
+        display: none; /* 榛樿涓嶆樉绀?*/
     }
     .tips {
         background-color: #333; /* Dark background for visibility */
@@ -76,7 +76,7 @@
     .add-account-button {
         display: flex; 
         align-items: center; 
-        justify-content: center; /* 中心对齐内容 */
+        justify-content: center; /* 涓績瀵归綈鍐呭 */
         width: 100%; 
         background-color: #444; 
         color: white; 
@@ -90,8 +90,8 @@
     .card-button {
         display: flex; 
         align-items: center; 
-        flex-direction: column; /* 确保内容垂直排列 */
-        justify-content: center; /* 中心对齐内容 */
+        flex-direction: column; /* 纭繚鍐呭鍨傜洿鎺掑垪 */
+        justify-content: center; /* 涓績瀵归綈鍐呭 */
         width: 100%; 
         background-color: #444; 
         color: white; 
@@ -105,8 +105,8 @@
     .icons-button {
         display: flex; 
         align-items: center; 
-        flex-direction: column; /* 确保内容垂直排列 */
-        justify-content: center; /* 中心对齐内容 */
+        flex-direction: column; /* 纭繚鍐呭鍨傜洿鎺掑垪 */
+        justify-content: center; /* 涓績瀵归綈鍐呭 */
         width: 100%; 
         background-color: transparent; 
         color: white; 
@@ -143,31 +143,31 @@
         height: 20px;
         margin-right: 10px;
         display: inline-block;
-        background-color: #fff; /* 默认颜色，将被JS覆盖 */
+        background-color: #fff; /* 榛樿棰滆壊锛屽皢琚獼S瑕嗙洊 */
     }
     .cards-container {
         display: flex;
         justify-content: space-between;
-        gap: 20px;  /* 这里可以根据您的需求调整间隙大小 */
+        gap: 20px;  /* 杩欓噷鍙互鏍规嵁鎮ㄧ殑闇€姹傝皟鏁撮棿闅欏ぇ灏?*/
     }
     .chart-container {
-        display: none; /* 默认隐藏图表 */
-        background-color: #333; /* 深灰色背景 */
+        display: none; /* 榛樿闅愯棌鍥捐〃 */
+        background-color: #333; /* 娣辩伆鑹茶儗鏅?*/
         color: #fff;
         padding: 20px;
-        margin: 0 20px 20px; /* 调整左右边距以与侧边栏对齐 */
-        border-radius: 5px; /* 轻微圆角 */
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 轻微阴影效果 */
-        max-height: 500px; /* 限制最大高度为300px或更小，根据需要调整 */
-        height: 100%; /* 确保容器填满可用空间但不超出max-height */
+        margin: 0 20px 20px; /* 璋冩暣宸﹀彸杈硅窛浠ヤ笌渚ц竟鏍忓榻?*/
+        border-radius: 5px; /* 杞诲井鍦嗚 */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 杞诲井闃村奖鏁堟灉 */
+        max-height: 500px; /* 闄愬埗鏈€澶ч珮搴︿负300px鎴栨洿灏忥紝鏍规嵁闇€瑕佽皟鏁?*/
+        height: 100%; /* 纭繚瀹瑰櫒濉弧鍙敤绌洪棿浣嗕笉瓒呭嚭max-height */
     }
     .canvas {
-        display: block; /* 块级显示消除底部间隙 */
-        width: 100%; /* 填充整个容器宽度 */
-        height: auto; /* 高度自动适应内容 */
+        display: block; /* 鍧楃骇鏄剧ず娑堥櫎搴曢儴闂撮殭 */
+        width: 100%; /* 濉厖鏁翠釜瀹瑰櫒瀹藉害 */
+        height: auto; /* 楂樺害鑷姩閫傚簲鍐呭 */
     }
     .negative-change {
-        color: red; /* 设置文字颜色为红色 */
+        color: red; /* 璁剧疆鏂囧瓧棰滆壊涓虹孩鑹?*/
     }
     .accounts-container {
         width: 100%;
@@ -179,39 +179,39 @@
     }
     .new-tag {
         display: inline-block;
-        background-color: #6c5ce7; /* 淡紫色背景 */
-        color: white; /* 白色文本 */
-        padding: 3px 8px; /* 内边距 */
-        border-radius: 10px; /* 圆角 */
-        font-size: 12px; /* 字体大小 */
-        margin-left: 10px; /* 与前一个元素的间隔 */
+        background-color: #6c5ce7; /* 娣＄传鑹茶儗鏅?*/
+        color: white; /* 鐧借壊鏂囨湰 */
+        padding: 3px 8px; /* 鍐呰竟璺?*/
+        border-radius: 10px; /* 鍦嗚 */
+        font-size: 12px; /* 瀛椾綋澶у皬 */
+        margin-left: 10px; /* 涓庡墠涓€涓厓绱犵殑闂撮殧 */
     }
     .top-right-icons {
-        position: fixed; /* 使用 fixed 保持图标相对于视口固定 */
-        top: 10px; /* 距离顶部的距离，根据需要调整 */
-        right: 10px; /* 距离右侧的距离 */
+        position: fixed; /* 浣跨敤 fixed 淇濇寔鍥炬爣鐩稿浜庤鍙ｅ浐瀹?*/
+        top: 10px; /* 璺濈椤堕儴鐨勮窛绂伙紝鏍规嵁闇€瑕佽皟鏁?*/
+        right: 10px; /* 璺濈鍙充晶鐨勮窛绂?*/
         display: flex;
         align-items: center;
-        z-index: 1000; /* 确保图标在警告条之上 */
+        z-index: 1000; /* 纭繚鍥炬爣鍦ㄨ鍛婃潯涔嬩笂 */
     }
 
     .top-right-icons i {
-        color: white; /* 设置图标颜色 */
-        margin-left: 15px; /* 图标之间的间隔 */
-        font-size: 18px; /* 图标大小 */
-        cursor: pointer; /* 鼠标悬停时显示指针 */
+        color: white; /* 璁剧疆鍥炬爣棰滆壊 */
+        margin-left: 15px; /* 鍥炬爣涔嬮棿鐨勯棿闅?*/
+        font-size: 18px; /* 鍥炬爣澶у皬 */
+        cursor: pointer; /* 榧犳爣鎮仠鏃舵樉绀烘寚閽?*/
     }
 
     .alert {
-        position: absolute; /* 绝对定位 */
-        top: 0; /* 置顶 */
-        left: 20%; /* 与主体内容左边对齐 */
-        right:20%; /* 与主体内容右边对齐 */
+        position: absolute; /* 缁濆瀹氫綅 */
+        top: 0; /* 缃《 */
+        left: 20%; /* 涓庝富浣撳唴瀹瑰乏杈瑰榻?*/
+        right:20%; /* 涓庝富浣撳唴瀹瑰彸杈瑰榻?*/
         background-color: #ff5722;
         color: white;
         padding: 10px;
         text-align: center;
-        z-index: 100; /* 确保在主体内容之上 */
+        z-index: 100; /* 纭繚鍦ㄤ富浣撳唴瀹逛箣涓?*/
     }
     .demo-overlay {
         display: none;
@@ -220,24 +220,24 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0); /* 透明背景，不干扰视觉 */
+        background: rgba(0, 0, 0, 0); /* 閫忔槑鑳屾櫙锛屼笉骞叉壈瑙嗚 */
         display: flex;
         align-items: center;
         justify-content: center;
         z-index: 2000;
-        pointer-events: none; /* 关键：使鼠标事件穿透覆盖层 */
+        pointer-events: none; /* 鍏抽敭锛氫娇榧犳爣浜嬩欢绌块€忚鐩栧眰 */
     }
 
     .demo-overlay::before {
         display: none;
         content: 'DEMO VERSION';
-        font-size: 5em; /* 大字体大小 */
-        color: rgba(255, 255, 255, 0.2); /* 轻微透明的白色文字 */
-        transform: rotate(-45deg); /* 将文字旋转-45度 */
-        position: absolute; /* 绝对定位使其可以覆盖更广 */
-        width: 100vw; /* 确保宽度足够覆盖屏幕 */
+        font-size: 5em; /* 澶у瓧浣撳ぇ灏?*/
+        color: rgba(255, 255, 255, 0.2); /* 杞诲井閫忔槑鐨勭櫧鑹叉枃瀛?*/
+        transform: rotate(-45deg); /* 灏嗘枃瀛楁棆杞?45搴?*/
+        position: absolute; /* 缁濆瀹氫綅浣垮叾鍙互瑕嗙洊鏇村箍 */
+        width: 100vw; /* 纭繚瀹藉害瓒冲瑕嗙洊灞忓箷 */
         text-align: center;
-        white-space: nowrap; /* 避免文字换行 */
+        white-space: nowrap; /* 閬垮厤鏂囧瓧鎹㈣ */
     }
     /* Modal container */
     .modal {
@@ -251,8 +251,8 @@
         overflow: auto; /* Enable scroll if needed */
         background-color: rgb(0,0,0); /* Fallback color */
         background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-        overflow-x: hidden; /* 防止水平滚动 */
-        overflow-y: auto; /* 允许垂直滚动 */
+        overflow-x: hidden; /* 闃叉姘村钩婊氬姩 */
+        overflow-y: auto; /* 鍏佽鍨傜洿婊氬姩 */
     }
 
     /* Modal Content */
@@ -260,14 +260,14 @@
         background-color: #333;
         padding: 20px;
         border: 1px solid #888;
-        width: 100%; /* 使用百分比定义宽度，确保响应式 */
-        max-width: 450px; /* 最大宽度为1000px */
-        position: fixed; /* 固定位置 */
-        top: 50%; /* 向下移动50% */
-        left: 50%; /* 向右移动50% */
-        transform: translate(-50%, -50%); /* 使用translate确保完全居中 */
+        width: 100%; /* 浣跨敤鐧惧垎姣斿畾涔夊搴︼紝纭繚鍝嶅簲寮?*/
+        max-width: 450px; /* 鏈€澶у搴︿负1000px */
+        position: fixed; /* 鍥哄畾浣嶇疆 */
+        top: 50%; /* 鍚戜笅绉诲姩50% */
+        left: 50%; /* 鍚戝彸绉诲姩50% */
+        transform: translate(-50%, -50%); /* 浣跨敤translate纭繚瀹屽叏灞呬腑 */
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-        z-index: 1050; /* 确保模态框在其他内容之上 */
+        z-index: 1050; /* 纭繚妯℃€佹鍦ㄥ叾浠栧唴瀹逛箣涓?*/
     }
 
     /* The Close Button */
@@ -348,20 +348,20 @@
     .step {
         display: flex;
         align-items: center;
-        color: #aaa; /* 默认颜色 */
+        color: #aaa; /* 榛樿棰滆壊 */
     }
 
     .step.active {
-        color: #fff; /* 激活状态颜色 */
+        color: #fff; /* 婵€娲荤姸鎬侀鑹?*/
     }
 
     .step i {
-        margin-right: 5px; /* 图标和文本之间的间隔 */
+        margin-right: 5px; /* 鍥炬爣鍜屾枃鏈箣闂寸殑闂撮殧 */
     }
     .actions {
         display: flex;
-        justify-content: flex-end; /* 右对齐 */
-        padding: 20px; /* 或其他适当的间距 */
+        justify-content: flex-end; /* 鍙冲榻?*/
+        padding: 20px; /* 鎴栧叾浠栭€傚綋鐨勯棿璺?*/
     }
 
     .btn {
@@ -386,7 +386,7 @@
     .status-icon {
         display: flex;
         align-items: center;
-        margin-right: 15px; /* 根据需要调整间距 */
+        margin-right: 15px; /* 鏍规嵁闇€瑕佽皟鏁撮棿璺?*/
     }
     .custom-input {
         padding: 10px;
@@ -395,10 +395,10 @@
         height: 40px;
         background-color:#333;
         color: white;
-        font-size: 2em; /* 大字体大小 */
-        width: 100vw; /* 确保宽度足够覆盖屏幕 */
+        font-size: 2em; /* 澶у瓧浣撳ぇ灏?*/
+        width: 100vw; /* 纭繚瀹藉害瓒冲瑕嗙洊灞忓箷 */
         text-align: center;
-        white-space: nowrap; /* 避免文字换行 */
+        white-space: nowrap; /* 閬垮厤鏂囧瓧鎹㈣ */
     }
     table {
         width: 100%;
@@ -420,10 +420,10 @@
             <button class="icons-button exclude" onclick="activateMyLedger(this)"><i id="network-status-icon" class="fas fa-check-circle" style="color: #28a745;"></i></button>
             <span id="network-status-text" style="color: white; margin-left: 5px;">Confirmed</span>
         </div>
-        <button class="icons-button" onclick="handleMenuButtonClick(this)"><i class="fas fa-bell"></i></button> <!-- 通知图标 -->
-        <button class="icons-button" onclick="handleMenuButtonClick(this)"><i class="fas fa-envelope"></i></button> <!-- 邮件图标 -->
-        <button class="icons-button" onclick="handleMenuButtonClick(this)"><i class="fas fa-cog"></i></button> <!-- 设置图标 -->
-        <button class="icons-button exclude" onclick="activateMyLedger(this)"><i class="fas fa-user-circle"></i></button> <!-- 用户图标 -->
+        <button class="icons-button" onclick="handleMenuButtonClick(this)"><i class="fas fa-bell"></i></button> <!-- 閫氱煡鍥炬爣 -->
+        <button class="icons-button" onclick="handleMenuButtonClick(this)"><i class="fas fa-envelope"></i></button> <!-- 閭欢鍥炬爣 -->
+        <button class="icons-button" onclick="handleMenuButtonClick(this)"><i class="fas fa-cog"></i></button> <!-- 璁剧疆鍥炬爣 -->
+        <button class="icons-button exclude" onclick="activateMyLedger(this)"><i class="fas fa-user-circle"></i></button> <!-- 鐢ㄦ埛鍥炬爣 -->
     </div> 
     <div class="container">
         <div class="sidebar">
@@ -466,7 +466,7 @@
                             <td>$472,420.00</td>
                             <td>Active</td>
                         </tr>
-                        <!-- 更多行 -->
+                        <!-- 鏇村琛?-->
                     </tbody>
                 </table>
             </div>        
@@ -598,11 +598,80 @@
         }
     ];
 
+    const BTC_CHART_SOURCES = [
+        {
+            name: 'CoinGecko chart',
+            url: function() {
+                const endDate = new Date();
+                const startDate = new Date();
+                startDate.setDate(endDate.getDate() - 6);
+                return `https://api.coingecko.com/api/v3/coins/bitcoin/market_chart/range?vs_currency=usd&from=${startDate.getTime() / 1000}&to=${endDate.getTime() / 1000}`;
+            },
+            parse: function(data) {
+                if (!Array.isArray(data.prices) || data.prices.length === 0) {
+                    return [];
+                }
+                return getDailyClosingPrices(data.prices);
+            }
+        },
+        {
+            name: 'Binance chart',
+            url: function() {
+                return 'https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=1d&limit=7';
+            },
+            parse: function(data) {
+                if (!Array.isArray(data)) {
+                    return [];
+                }
+                return data.map(item => ({
+                    date: new Date(item[0]).toLocaleDateString("en-US"),
+                    close: Number(item[4])
+                }));
+            }
+        },
+        {
+            name: 'Coinbase chart',
+            url: function() {
+                const endDate = new Date();
+                const startDate = new Date();
+                startDate.setDate(endDate.getDate() - 6);
+                return `https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=86400&start=${startDate.toISOString()}&end=${endDate.toISOString()}`;
+            },
+            parse: function(data) {
+                if (!Array.isArray(data)) {
+                    return [];
+                }
+                return data
+                    .map(item => ({
+                        date: new Date(item[0] * 1000).toLocaleDateString("en-US"),
+                        close: Number(item[4])
+                    }))
+                    .sort((a, b) => new Date(a.date) - new Date(b.date));
+            }
+        },
+        {
+            name: 'Kraken chart',
+            url: function() {
+                return 'https://api.kraken.com/0/public/OHLC?pair=XBTUSD&interval=1440';
+            },
+            parse: function(data) {
+                const rows = data.result && data.result.XXBTZUSD;
+                if (!Array.isArray(rows)) {
+                    return [];
+                }
+                return rows.slice(-7).map(item => ({
+                    date: new Date(item[0] * 1000).toLocaleDateString("en-US"),
+                    close: Number(item[4])
+                }));
+            }
+        }
+    ];
+
     function getFallbackChartPrices() {
         const { todayPrice } = fallbackBtcPrices();
         return getLastSixDays().map((date, index) => ({
             date,
-            close: todayPrice * (0.985 + index * 0.0025)
+            close: todayPrice
         }));
     }
 
@@ -613,6 +682,32 @@
         });
 
         return Array.from(dailyPrices, ([date, close]) => ({ date, close })).slice(-7);
+    }
+
+    async function fetchChartFromSources(sources) {
+        const errors = [];
+
+        for (const source of sources) {
+            try {
+                const data = await fetchJson(source.url(), source.name);
+                const prices = source.parse(data)
+                    .filter(item => item.date && isValidPrice(item.close))
+                    .slice(-7);
+
+                if (prices.length < 2) {
+                    throw new Error(`${source.name} returned too few chart points`);
+                }
+
+                return {
+                    prices,
+                    source: source.name
+                };
+            } catch (error) {
+                errors.push(`${source.name}: ${error.message}`);
+            }
+        }
+
+        throw new Error(errors.join('; '));
     }
 
     function setNetworkStatus(isOnline) {
@@ -653,7 +748,6 @@
     document.addEventListener('DOMContentLoaded', function() {
         const main = document.querySelector('.main');
         main.addEventListener('click', function(event) {
-            // 检查被点击的元素是否为我们关心的按钮
             if (event.target.classList.contains('card-button')) {
                 // console.log("Button was clicked!", event.target.textContent);
                 handleMenuButtonClick(event.target);
@@ -661,9 +755,9 @@
         });
     });
     document.addEventListener('DOMContentLoaded', function() {
-        var icons = document.querySelectorAll('.preicon'); // 确保这里的选择器与您的图标元素的类名一致
+        var icons = document.querySelectorAll('.preicon');
         icons.forEach(function(icon) {
-            // 生成随机颜色
+            // 鐢熸垚闅忔満棰滆壊
             var randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
             icon.style.backgroundColor = randomColor;
         });
@@ -695,27 +789,25 @@
     }
 
     function formatDate(date) {
-        return `${date.getMonth() + 1}/${date.getDate()}`; // 格式为"月/日"
+        return `${date.getMonth() + 1}/${date.getDate()}`; // 鏍煎紡涓?鏈?鏃?
     }
     function handleMenuButtonClick(button) {
-        // 创建并显示加载图标
         const loadingIcon = document.createElement('div');
         loadingIcon.className = 'loading-icon';
         loadingIcon.style.width = "20px";
         loadingIcon.style.height = "20px";
         loadingIcon.style.borderRadius = "50%";
-        loadingIcon.style.border = "4px solid #f3f3f3"; // 浅灰色边框
-        loadingIcon.style.borderTop = "4px solid #3498db"; // 蓝色顶部边框
+        loadingIcon.style.border = "4px solid #f3f3f3";
+        loadingIcon.style.borderTop = "4px solid #3498db";
         loadingIcon.style.animation = "spin 2s linear infinite";
         button.appendChild(loadingIcon);
         loadingIcon.style.display = 'block';
-        // 设置定时器，5秒后移除图标并显示警告
+
         setTimeout(function() {
             loadingIcon.style.display = 'none';
             alert('Unknown network failure. If this recurs, please try again in 30 minutes.');
         }, 5000);
-    }
-    function activateButton(element) {
+    }    function activateButton(element) {
         const buttons = document.querySelectorAll('.menu-button, .card-button, .icons-button');
         buttons.forEach(button => button.classList.remove('active'));
         element.classList.add('active');
@@ -743,10 +835,8 @@
                     y: {
                         beginAtZero: false,
                         ticks: {
-                            // 自动缩放Y轴刻度
-                            autoSkip: true,
-                            maxTicksLimit: 5, // 最多显示5个刻度
-                            stepSize: 1000 // 自定义步长，根据数据范围调整
+                            // 鑷姩缂╂斁Y杞村埢搴?                            autoSkip: true,
+                            maxTicksLimit: 5, // 鏈€澶氭樉绀?涓埢搴?                            stepSize: 1000 // 鑷畾涔夋闀匡紝鏍规嵁鏁版嵁鑼冨洿璋冩暣
                         }
                     }
                 }
@@ -757,7 +847,7 @@
         const accountsContainer  = document.createElement('accounts-container');
         accountsContainer .style.display = 'block';
         activateButton(element);
-        // const btcPrice = await getCurrentBtcPrice();  // 获取当前BTC价格
+        // const btcPrice = await getCurrentBtcPrice();  // 鑾峰彇褰撳墠BTC浠锋牸
         const { todayPrice, yesterdayPrice } = await getBitcoinPrices();
         const btcPrice = todayPrice;
         const accountsData = [
@@ -783,7 +873,7 @@
                     </thead>
                     <tbody>`;
 
-        // 为每个账户添加行
+        // 涓烘瘡涓处鎴锋坊鍔犺
         accountsData.forEach(account => {
             const value = (account.btcAmount * btcPrice).toLocaleString('en-US', {
                 style: 'currency',
@@ -813,8 +903,8 @@
                 </table>
             </div>`;
 
-        main.innerHTML = accountsHtml;  // 更新main内容
-        main.appendChild(accountsContainer); // 添加accountsContainer
+        main.innerHTML = accountsHtml;  // 鏇存柊main鍐呭
+        main.appendChild(accountsContainer); // 娣诲姞accountsContainer
     }
 
     async function activatePortfolio(element) {
@@ -823,7 +913,7 @@
         const { todayPrice, yesterdayPrice } = await getBitcoinPrices();
         const totalValue = BTC_AMOUNT * todayPrice;
         const priceChange = todayPrice - yesterdayPrice;
-        const changeSymbol = priceChange >= 0 ? '↑' : '↓';
+        const changeSymbol = priceChange >= 0 ? '+' : '-';
         const changeColor = priceChange >= 0 ? 'green' : 'red';
         main.innerHTML = `
         <div class="accounts-container" style="display: none;">
@@ -845,7 +935,7 @@
                             <td>$472,420.00</td>
                             <td>Active</td>
                         </tr>
-                        <!-- 更多行 -->
+                        <!-- 鏇村琛?-->
                     </tbody>
                 </table>
             </div>        
@@ -884,25 +974,10 @@
         });
     }
     async function fetchBitcoinPrices() {
-        const endDate = new Date(); // 今天
-        const startDate = new Date();
-        startDate.setDate(endDate.getDate() - 6); // 7天前
-
-        const url = `https://api.coingecko.com/api/v3/coins/bitcoin/market_chart/range?vs_currency=usd&from=${startDate.getTime() / 1000}&to=${endDate.getTime() / 1000}`;
-
         try {
-            const response = await fetch(url);
-            if (!response.ok) {
-                throw new Error(`CoinGecko returned ${response.status}`);
-            }
-            const data = await response.json();
-            if (!Array.isArray(data.prices) || data.prices.length === 0) {
-                throw new Error('CoinGecko returned no price data');
-            }
-            const dailyPrices = getDailyClosingPrices(data.prices)
-                .filter(item => isValidPrice(item.close));
+            const { prices } = await fetchChartFromSources(BTC_CHART_SOURCES);
             setNetworkStatus(true);
-            return dailyPrices.length ? dailyPrices : getFallbackChartPrices();
+            return prices;
         } catch (error) {
             console.error('Error fetching data:', error);
             try {
@@ -915,16 +990,15 @@
             }
             return getFallbackChartPrices();
         }
-    }
-    async function getCurrentBtcPrice() {
+    }    async function getCurrentBtcPrice() {
         try {
             const { price } = await fetchPriceFromSources(BTC_PRICE_SOURCES);
             setNetworkStatus(true);
-            return price;  // 获取BTC当前价格
+            return price;  // 鑾峰彇BTC褰撳墠浠锋牸
         } catch (error) {
             console.error('Error fetching BTC price:', error);
             setNetworkStatus(false);
-            return fallbackBtcPrices().todayPrice;  // 在错误情况下返回兜底价格
+            return fallbackBtcPrices().todayPrice;  // 鍦ㄩ敊璇儏鍐典笅杩斿洖鍏滃簳浠锋牸
         }
     }
     async function getBitcoinPrices() {
@@ -973,23 +1047,22 @@
         }
     }
     function activateSend(element) {
-        // 将发送按钮设置为激活状态
-        activateButton(element);
+        // 灏嗗彂閫佹寜閽缃负婵€娲荤姸鎬?        activateButton(element);
 
-        // 显示模态框
+        // 鏄剧ず妯℃€佹
         var modal = document.getElementById('sendModal');
         // var btn = document.getElementById("myBtn");
         modal.style.display = "block";
 
-        // 获取关闭按钮
+        // 鑾峰彇鍏抽棴鎸夐挳
         var closeButton = modal.querySelector('.close');
 
-        // 当用户点击关闭按钮 (x)，关闭模态框
+        // 褰撶敤鎴风偣鍑诲叧闂寜閽?(x)锛屽叧闂ā鎬佹
         closeButton.onclick = function() {
             modal.style.display = "none";
         }
 
-        // 当用户点击模态框外部时，也关闭模态框
+        // 褰撶敤鎴风偣鍑绘ā鎬佹澶栭儴鏃讹紝涔熷叧闂ā鎬佹
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
@@ -997,23 +1070,22 @@
         }
     }
     function activateReceive(element) {
-        // 将发送按钮设置为激活状态
-        activateButton(element);
+        // 灏嗗彂閫佹寜閽缃负婵€娲荤姸鎬?        activateButton(element);
 
-        // 显示模态框
+        // 鏄剧ず妯℃€佹
         var modal = document.getElementById('receiveModal');
         // var btn = document.getElementById("myBtn");
         modal.style.display = "block";
 
-        // 获取关闭按钮
+        // 鑾峰彇鍏抽棴鎸夐挳
         var closeButton = modal.querySelector('.close');
 
-        // 当用户点击关闭按钮 (x)，关闭模态框
+        // 褰撶敤鎴风偣鍑诲叧闂寜閽?(x)锛屽叧闂ā鎬佹
         closeButton.onclick = function() {
             modal.style.display = "none";
         }
 
-        // 当用户点击模态框外部时，也关闭模态框
+        // 褰撶敤鎴风偣鍑绘ā鎬佹澶栭儴鏃讹紝涔熷叧闂ā鎬佹
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
@@ -1023,36 +1095,30 @@
     function activateMyLedger(element) {
         activateButton(element);
         const main = document.querySelector('.main');
-        // 清除现有的内部元素
-        main.innerHTML = '<div class="alert">New Ledger Live update available, it will install automatically when you close the app</div>   ';
-        // 创建图片和文字容器
-        const content = document.createElement('div');
+        // 娓呴櫎鐜版湁鐨勫唴閮ㄥ厓绱?        main.innerHTML = '<div class="alert">New Ledger Live update available, it will install automatically when you close the app</div>   ';
+        // 鍒涘缓鍥剧墖鍜屾枃瀛楀鍣?        const content = document.createElement('div');
         content.style.display = 'flex';
         content.style.flexDirection = 'column';
         content.style.alignItems = 'center';
         content.style.justifyContent = 'center';
         content.style.height = '100%';
 
-        // 创建图片元素
+        // 鍒涘缓鍥剧墖鍏冪礌
         const img = document.createElement('img');
-        img.src = './myledger.png'; // 确保图片路径正确
+        img.src = './myledger.png'; // 纭繚鍥剧墖璺緞姝ｇ‘
         img.alt = 'My Ledger Device';
-        img.style.maxWidth = '600px'; // 控制图片最大宽度
-        img.style.width = '100%'; // 响应式宽度
-
-        // 创建文字元素
+        img.style.maxWidth = '600px'; // 鎺у埗鍥剧墖鏈€澶у搴?        img.style.width = '100%'; // 鍝嶅簲寮忓搴?
+        // 鍒涘缓鏂囧瓧鍏冪礌
         const text = document.createElement('p');
         text.textContent = 'Connect and unlock your device';
         text.style.color = 'white';
         text.style.fontSize = '18px';
         text.style.marginTop = '20px';
 
-        // 将图片和文字添加到内容容器
-        content.appendChild(img);
+        // 灏嗗浘鐗囧拰鏂囧瓧娣诲姞鍒板唴瀹瑰鍣?        content.appendChild(img);
         content.appendChild(text);
 
-        // 将内容容器添加到主容器
-        main.appendChild(content);
+        // 灏嗗唴瀹瑰鍣ㄦ坊鍔犲埌涓诲鍣?        main.appendChild(content);
     }
 </script>
 <!-- Modal -->
