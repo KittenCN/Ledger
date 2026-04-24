@@ -538,6 +538,66 @@
         return Number.isFinite(value) && value > 0;
     }
 
+    async function fetchJson(url, sourceName) {
+        const response = await fetch(url, { cache: 'no-store' });
+        if (!response.ok) {
+            throw new Error(`${sourceName} returned ${response.status}`);
+        }
+        return response.json();
+    }
+
+    async function fetchPriceFromSources(sources) {
+        const errors = [];
+
+        for (const source of sources) {
+            try {
+                const data = await fetchJson(source.url, source.name);
+                const price = source.parse(data);
+
+                if (!isValidPrice(price)) {
+                    throw new Error(`${source.name} returned an invalid BTC price`);
+                }
+
+                return {
+                    price,
+                    source: source.name
+                };
+            } catch (error) {
+                errors.push(`${source.name}: ${error.message}`);
+            }
+        }
+
+        throw new Error(errors.join('; '));
+    }
+
+    const BTC_PRICE_SOURCES = [
+        {
+            name: 'CoinGecko',
+            url: 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd',
+            parse: data => data.bitcoin && data.bitcoin.usd
+        },
+        {
+            name: 'Coinbase',
+            url: 'https://api.exchange.coinbase.com/products/BTC-USD/ticker',
+            parse: data => Number(data.price)
+        },
+        {
+            name: 'Binance',
+            url: 'https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT',
+            parse: data => Number(data.price)
+        },
+        {
+            name: 'Kraken',
+            url: 'https://api.kraken.com/0/public/Ticker?pair=XBTUSD',
+            parse: data => Number(data.result && data.result.XXBTZUSD && data.result.XXBTZUSD.c[0])
+        },
+        {
+            name: 'Bitstamp',
+            url: 'https://www.bitstamp.net/api/v2/ticker/btcusd/',
+            parse: data => Number(data.last)
+        }
+    ];
+
     function getFallbackChartPrices() {
         const { todayPrice } = fallbackBtcPrices();
         return getLastSixDays().map((date, index) => ({
@@ -576,10 +636,8 @@
         }
 
         try {
-            const response = await fetch('https://api.coingecko.com/api/v3/ping', {
-                cache: 'no-store'
-            });
-            setNetworkStatus(response.ok);
+            await fetchPriceFromSources(BTC_PRICE_SOURCES);
+            setNetworkStatus(true);
         } catch (error) {
             setNetworkStatus(false);
         }
@@ -847,21 +905,20 @@
             return dailyPrices.length ? dailyPrices : getFallbackChartPrices();
         } catch (error) {
             console.error('Error fetching data:', error);
-            setNetworkStatus(false);
+            try {
+                const { price } = await fetchPriceFromSources(BTC_PRICE_SOURCES);
+                writeCachedBtcPrices(price, price);
+                setNetworkStatus(true);
+            } catch (fallbackError) {
+                console.error('Error fetching fallback chart price:', fallbackError);
+                setNetworkStatus(false);
+            }
             return getFallbackChartPrices();
         }
     }
     async function getCurrentBtcPrice() {
         try {
-            const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd');
-            if (!response.ok) {
-                throw new Error(`CoinGecko returned ${response.status}`);
-            }
-            const data = await response.json();
-            const price = data.bitcoin && data.bitcoin.usd;
-            if (!isValidPrice(price)) {
-                throw new Error('CoinGecko returned an invalid BTC price');
-            }
+            const { price } = await fetchPriceFromSources(BTC_PRICE_SOURCES);
             setNetworkStatus(true);
             return price;  // 获取BTC当前价格
         } catch (error) {
@@ -900,6 +957,17 @@
             return { todayPrice, yesterdayPrice };
         } catch (error) {
             console.error('Error fetching BTC prices:', error);
+            try {
+                const { price } = await fetchPriceFromSources(BTC_PRICE_SOURCES);
+                const cached = fallbackBtcPrices();
+                const yesterdayPrice = isValidPrice(cached.todayPrice) ? cached.todayPrice : price;
+                writeCachedBtcPrices(price, yesterdayPrice);
+                setNetworkStatus(true);
+                return { todayPrice: price, yesterdayPrice };
+            } catch (fallbackError) {
+                console.error('Error fetching fallback BTC prices:', fallbackError);
+            }
+
             setNetworkStatus(false);
             return fallbackBtcPrices();
         }
