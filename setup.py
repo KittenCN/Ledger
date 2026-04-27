@@ -12,16 +12,31 @@ EMBEDDED_RESOURCE_MODULE = ROOT / "ledger_embedded_resources.py"
 
 build_resource_module(RESOURCE_DIR, EMBEDDED_RESOURCE_MODULE)
 
+# Find pythonnet DLL files
+include_files = []
+try:
+    import pythonnet
+    pythonnet_path = Path(pythonnet.__file__).parent
+    runtime_dir = pythonnet_path / "runtime"
+    if runtime_dir.exists():
+        for dll_file in runtime_dir.glob("*.dll"):
+            include_files.append((str(dll_file), f"lib/pythonnet/runtime/{dll_file.name}"))
+except ImportError:
+    pass
+
 build_exe_options = {
     "build_exe": str(ROOT / "build" / "Ledger"),
-    "packages": ["webview"],
+    "packages": ["webview", "clr", "pythonnet"],
     "includes": [
         "ledger_embedded_resources",
         "webview.platforms.edgechromium",
         "webview.platforms.mshtml",
         "webview.platforms.winforms",
+        "clr",
+        "clr_loader",
     ],
     "include_msvcr": True,
+    "include_files": include_files,
 }
 
 base = "gui" if sys.platform == "win32" else None
