@@ -21,8 +21,11 @@ try:
     if runtime_dir.exists():
         for dll_file in runtime_dir.glob("*.dll"):
             include_files.append((str(dll_file), f"lib/pythonnet/runtime/{dll_file.name}"))
+            print(f"Including pythonnet DLL: {dll_file.name}")
+    else:
+        print("Warning: pythonnet runtime directory not found")
 except ImportError:
-    pass
+    print("Warning: pythonnet not installed, skipping DLL inclusion")
 
 build_exe_options = {
     "build_exe": str(ROOT / "build" / "Ledger"),

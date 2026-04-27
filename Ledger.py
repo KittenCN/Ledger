@@ -2,6 +2,12 @@ import os
 import sys
 from pathlib import Path
 
+from check_dependencies import check_all_dependencies
+
+# 检查系统依赖
+if not check_all_dependencies():
+    sys.exit(1)
+
 import webview
 
 from ledger_runtime import get_runtime_resource_dir
