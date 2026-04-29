@@ -3,6 +3,7 @@
 ## 问题总结
 
 通过 `cx_Freeze` 打包的 exe 文件在全新 Windows 系统上无法运行，报错：
+
 ```
 RuntimeError: Failed to resolve Python Runtime Loader initialize from Python.Runtime.dll
 ```
@@ -48,6 +49,7 @@ build_exe_options = {
 ### 2. 添加启动时依赖检查 ✅
 
 创建了 `check_dependencies.py` 模块，在应用启动时自动检查：
+
 - .NET Framework 4.7.2+
 - WebView2 Runtime
 
@@ -62,6 +64,7 @@ python verify_build.py
 ```
 
 检查结果：
+
 - [OK] 主程序和 Python 运行时
 - [OK] pythonnet DLL (Python.Runtime.dll)
 - [OK] CLR Loader DLL
@@ -74,17 +77,21 @@ python verify_build.py
 ### 必须预装的组件
 
 #### 1. .NET Framework 4.7.2 或更高版本
+
 - **为什么需要**: pythonnet 依赖 .NET CLR
-- **下载**: https://dotnet.microsoft.com/download/dotnet-framework
+- **下载**: <https://dotnet.microsoft.com/download/dotnet-framework>
 - **检查命令**:
+
   ```powershell
   Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full"
   ```
 
 #### 2. Microsoft Edge WebView2 Runtime
+
 - **为什么需要**: pywebview 使用 WebView2 渲染界面
-- **下载**: https://developer.microsoft.com/microsoft-edge/webview2/
+- **下载**: <https://developer.microsoft.com/microsoft-edge/webview2/>
 - **检查命令**:
+
   ```powershell
   Get-ItemProperty "HKLM:\SOFTWARE\WOW6432Node\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}"
   ```
@@ -128,12 +135,15 @@ python verify_build.py
 ## 常见问题
 
 ### Q1: 仍然报 Python.Runtime.dll 错误
+
 **A**: 检查目标系统是否安装了 .NET Framework 4.7.2+
 
 ### Q2: 应用启动后显示空白
+
 **A**: 检查是否安装了 WebView2 Runtime
 
 ### Q3: 应用无法启动，没有错误提示
+
 **A**: 以管理员权限运行，或检查防病毒软件是否拦截
 
 ## 构建命令
