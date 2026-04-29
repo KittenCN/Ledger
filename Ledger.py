@@ -6,19 +6,9 @@ from check_dependencies import check_all_dependencies
 
 
 BASE_DIR = Path(sys.executable).resolve().parent if getattr(sys, "frozen", False) else Path(__file__).resolve().parent
-RUNTIME_CONFIG_PATH = BASE_DIR / "ledger.runtimeconfig.json"
-
-
-def configure_pythonnet_runtime():
-    if RUNTIME_CONFIG_PATH.is_file():
-        os.environ.setdefault("PYTHONNET_RUNTIME", "coreclr")
-        os.environ.setdefault("PYTHONNET_CORECLR_RUNTIME_CONFIG", str(RUNTIME_CONFIG_PATH))
-
 
 if not check_all_dependencies():
     sys.exit(1)
-
-configure_pythonnet_runtime()
 
 import webview
 

@@ -32,7 +32,6 @@ def main():
     print("=== 主程序 ===")
     all_ok &= check_file(build_dir, "Ledger.exe", "主程序")
     all_ok &= check_file(build_dir, "python313.dll", "Python 运行时")
-    all_ok &= check_file(build_dir, "ledger.runtimeconfig.json", "CoreCLR runtime config")
 
     # 检查 pythonnet
     print("\n=== pythonnet 依赖 ===")
@@ -65,9 +64,8 @@ def main():
     if all_ok:
         print("[OK] All required files are included")
         print("\nWARNING: Target system still needs:")
-        print("  1. .NET Framework 4.7.2 or higher")
-        print("  2. .NET Desktop Runtime 6.0 or higher")
-        print("  3. Microsoft Edge WebView2 Runtime")
+        print("  1. .NET Framework 4.8 or higher")
+        print("  2. Microsoft Edge WebView2 Runtime")
         return True
     else:
         print("[FAIL] Missing required files, please check build configuration")
