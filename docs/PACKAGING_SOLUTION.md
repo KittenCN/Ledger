@@ -4,7 +4,7 @@
 
 通过 `cx_Freeze` 打包的 exe 文件在全新 Windows 系统上无法运行，报错：
 
-```
+```text
 RuntimeError: Failed to resolve Python Runtime Loader initialize from Python.Runtime.dll
 ```
 
