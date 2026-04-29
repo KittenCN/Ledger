@@ -4,16 +4,27 @@ from pathlib import Path
 
 from check_dependencies import check_all_dependencies
 
-# 检查系统依赖
+
+BASE_DIR = Path(sys.executable).resolve().parent if getattr(sys, "frozen", False) else Path(__file__).resolve().parent
+RUNTIME_CONFIG_PATH = BASE_DIR / "ledger.runtimeconfig.json"
+
+
+def configure_pythonnet_runtime():
+    if RUNTIME_CONFIG_PATH.is_file():
+        os.environ.setdefault("PYTHONNET_RUNTIME", "coreclr")
+        os.environ.setdefault("PYTHONNET_CORECLR_RUNTIME_CONFIG", str(RUNTIME_CONFIG_PATH))
+
+
 if not check_all_dependencies():
     sys.exit(1)
+
+configure_pythonnet_runtime()
 
 import webview
 
 from ledger_runtime import get_runtime_resource_dir
 
 
-BASE_DIR = Path(sys.executable).resolve().parent if getattr(sys, "frozen", False) else Path(__file__).resolve().parent
 RESOURCE_DIR = get_runtime_resource_dir()
 ICON_PATH = RESOURCE_DIR / "IconGroup1.ico"
 ACTIVATION_KEY = "TJJtds@1q2w3e"

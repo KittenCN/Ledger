@@ -9,11 +9,15 @@ ROOT = Path(__file__).resolve().parent
 RESOURCE_DIR = ROOT / "resource"
 ICON_FILE = RESOURCE_DIR / "IconGroup1.ico"
 EMBEDDED_RESOURCE_MODULE = ROOT / "ledger_embedded_resources.py"
+RUNTIME_CONFIG_FILE = ROOT / "ledger.runtimeconfig.json"
 
 build_resource_module(RESOURCE_DIR, EMBEDDED_RESOURCE_MODULE)
 
 # Find pythonnet DLL files
 include_files = []
+if RUNTIME_CONFIG_FILE.exists():
+    include_files.append((str(RUNTIME_CONFIG_FILE), RUNTIME_CONFIG_FILE.name))
+
 try:
     import pythonnet
     pythonnet_path = Path(pythonnet.__file__).parent
