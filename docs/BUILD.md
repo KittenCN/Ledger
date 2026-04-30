@@ -33,7 +33,7 @@ Install build dependencies:
 Run the build:
 
 ```powershell
-.\.venv-build\Scripts\python.exe setup.py build
+.\.venv-build\Scripts\python.exe setup.py build_exe
 ```
 
 ## Build output
